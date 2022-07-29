@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="HeroeCollectionViewCell" customModule="DragonBall" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="261" height="168"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="261" height="168"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo1" translatesAutoresizingMaskIntoConstraints="NO" id="Qll-UB-XOP">
+                        <rect key="frame" x="0.0" y="0.0" width="261" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="0n5-2l-Q0v"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmu-Lh-fNA">
+                        <rect key="frame" x="0.0" y="106" width="261" height="62"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="rmu-Lh-fNA" firstAttribute="top" secondItem="Qll-UB-XOP" secondAttribute="bottom" constant="6" id="1C5-vf-vXT"/>
+                <constraint firstItem="rmu-Lh-fNA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ANM-lO-98J"/>
+                <constraint firstItem="Qll-UB-XOP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DI2-Ky-l2m"/>
+                <constraint firstItem="Qll-UB-XOP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Igw-hv-3kd"/>
+                <constraint firstAttribute="bottom" secondItem="rmu-Lh-fNA" secondAttribute="bottom" id="T7P-Hf-Ufu"/>
+                <constraint firstAttribute="trailing" secondItem="Qll-UB-XOP" secondAttribute="trailing" id="bzo-hw-0W3"/>
+                <constraint firstAttribute="trailing" secondItem="rmu-Lh-fNA" secondAttribute="trailing" id="wTb-24-M2n"/>
+            </constraints>
+            <size key="customSize" width="264" height="168"/>
+            <connections>
+                <outlet property="heroImage" destination="Qll-UB-XOP" id="nLN-Qb-4fp"/>
+                <outlet property="heroName" destination="rmu-Lh-fNA" id="IFo-l9-IXd"/>
+            </connections>
+            <point key="canvasLocation" x="292.02898550724638" y="161.38392857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="fondo1" width="1116" height="1664"/>
+    </resources>
+</document>
