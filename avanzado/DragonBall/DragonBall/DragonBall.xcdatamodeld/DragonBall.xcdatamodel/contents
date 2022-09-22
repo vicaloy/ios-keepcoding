@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="HeroEntity" representedClassName=".HeroEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="descrip" optional="YES" attributeType="String"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="LocationEntity" representedClassName=".LocationEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="dateShow" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="latitud" optional="YES" attributeType="String"/>
+        <attribute name="longitud" optional="YES" attributeType="String"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroEntity"/>
+    </entity>
+    <elements>
+        <element name="HeroEntity" positionX="-27" positionY="18" width="128" height="118"/>
+        <element name="LocationEntity" positionX="-18" positionY="72" width="128" height="104"/>
+    </elements>
+</model>
