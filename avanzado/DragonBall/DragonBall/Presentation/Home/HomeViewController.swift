@@ -20,12 +20,16 @@ class HomeViewController: UIViewController {
     private var viewModel: HomeViewModelProtocol?
     
     private var heros: [Hero] = []
+    private var filteredHeros: [Hero] = []
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Characters"
+        bindCollectionView()
         viewModel?.onViewsLoaded()
     }
     
@@ -35,13 +39,14 @@ class HomeViewController: UIViewController {
     
     
     private func bindCollectionView() {
+        searchBar.delegate = self
+        
         let nib = UINib(nibName: cellName, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellReuseId)
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.reloadData()
-        
     }
     
     private func load(loading:Bool){
@@ -57,7 +62,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewProtocol{
     func onCollectionLoad(heros: [Hero]) {
         self.heros = heros
-        self.bindCollectionView()
+        self.filteredHeros = heros
+        self.collectionView.reloadData()
         self.load(loading: false)
     }
     
@@ -74,7 +80,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return heros.count
+        return filteredHeros.count
     }
  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -84,12 +90,22 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseId, for: indexPath)
-        (cell as? HeroCollectionViewCell)?.setHero(hero: heros[indexPath.row])
+        (cell as? HeroCollectionViewCell)?.setHero(hero: filteredHeros[indexPath.row])
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigateDetail(context: self, hero: heros[indexPath.row])
+        navigateDetail(context: self, hero: filteredHeros[indexPath.row])
     }
+}
+
+extension HomeViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredHeros = searchText.isEmpty ? heros : heros.filter { (item: Hero) -> Bool in
+            return item.name?.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
+            
+        collectionView.reloadData()
+        }
 }

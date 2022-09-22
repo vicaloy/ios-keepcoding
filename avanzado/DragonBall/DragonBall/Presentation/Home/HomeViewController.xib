@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="kJS-VV-fsX" id="J4I-Ne-jhV"/>
                 <outlet property="collectionView" destination="mKC-6g-iVC" id="ZUf-Sq-0B7"/>
+                <outlet property="searchBar" destination="ZC3-wV-nhV" id="1dZ-VW-SFf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mKC-6g-iVC">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="95" width="414" height="767"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GYe-cm-tUK">
                         <size key="itemSize" width="128" height="128"/>
@@ -33,16 +34,23 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kJS-VV-fsX">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                 </activityIndicatorView>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZC3-wV-nhV">
+                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="ZC3-wV-nhV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2Pw-id-Vsj"/>
+                <constraint firstItem="ZC3-wV-nhV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7ZW-3r-liQ"/>
                 <constraint firstItem="kJS-VV-fsX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Aiq-aE-NL0"/>
                 <constraint firstItem="kJS-VV-fsX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OPN-6H-5p5"/>
+                <constraint firstItem="ZC3-wV-nhV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YJB-FE-83t"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mKC-6g-iVC" secondAttribute="trailing" id="j72-2d-piT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mKC-6g-iVC" secondAttribute="bottom" id="t0C-Cb-9ee"/>
                 <constraint firstItem="mKC-6g-iVC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xJ2-Kd-LHX"/>
-                <constraint firstItem="mKC-6g-iVC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yzS-Ug-yBo"/>
+                <constraint firstItem="mKC-6g-iVC" firstAttribute="top" secondItem="ZC3-wV-nhV" secondAttribute="bottom" id="yzS-Ug-yBo"/>
             </constraints>
             <point key="canvasLocation" x="132" y="100"/>
         </view>
