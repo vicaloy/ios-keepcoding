@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class KeyChainConstant{
+    static let service = "DragonBall"
+    static let loginTokenAccount = "LoginToken"
+}
+

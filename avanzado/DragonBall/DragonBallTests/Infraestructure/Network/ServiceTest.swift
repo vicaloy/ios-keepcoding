@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import XCTest
+@testable import DragonBall
+
+
+class ServiceTest: XCTestCase {
+    
+    
+}

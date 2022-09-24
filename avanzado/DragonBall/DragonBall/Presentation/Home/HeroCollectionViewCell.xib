@@ -25,21 +25,28 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sdw-0E-eA0">
                         <rect key="frame" x="0.0" y="0.0" width="353" height="209"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="sex-9h-36o">
+                        <rect key="frame" x="166" y="99" width="20" height="20"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="b5p-3X-vGn" secondAttribute="trailing" constant="20" id="21Y-4F-lnb"/>
                 <constraint firstAttribute="trailing" secondItem="sdw-0E-eA0" secondAttribute="trailing" id="32B-Wb-gUh"/>
+                <constraint firstItem="sex-9h-36o" firstAttribute="centerY" secondItem="sdw-0E-eA0" secondAttribute="centerY" id="8ag-IT-e67"/>
                 <constraint firstAttribute="bottom" secondItem="b5p-3X-vGn" secondAttribute="bottom" constant="8" id="V9v-Dx-2Mz"/>
                 <constraint firstItem="b5p-3X-vGn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="bBJ-RK-nY5"/>
                 <constraint firstItem="sdw-0E-eA0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fNq-NW-oeD"/>
                 <constraint firstItem="sdw-0E-eA0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kk8-n1-jbD"/>
+                <constraint firstItem="sex-9h-36o" firstAttribute="centerX" secondItem="sdw-0E-eA0" secondAttribute="centerX" id="qpu-jI-PfS"/>
                 <constraint firstItem="b5p-3X-vGn" firstAttribute="top" secondItem="sdw-0E-eA0" secondAttribute="bottom" constant="8" id="tGw-AI-RMB"/>
             </constraints>
             <size key="customSize" width="353" height="246"/>
             <connections>
                 <outlet property="image" destination="sdw-0E-eA0" id="NGY-dd-gvz"/>
+                <outlet property="imgActivityIndicator" destination="sex-9h-36o" id="6VZ-mH-AkJ"/>
                 <outlet property="name" destination="b5p-3X-vGn" id="0IV-Ua-wWN"/>
             </connections>
             <point key="canvasLocation" x="10236.956521739132" y="-911.38392857142856"/>

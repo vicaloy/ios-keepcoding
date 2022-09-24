@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationViewController" customModule="DragonBall" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="Hzd-Kk-Pr5" id="zCu-Ut-nfj"/>
                 <outlet property="locationView" destination="FUj-tZ-6IH" id="eAZ-Zl-qCN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,11 +23,17 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FUj-tZ-6IH">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                 </mapView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Hzd-Kk-Pr5">
+                    <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Hzd-Kk-Pr5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="44n-yN-Upp"/>
                 <constraint firstItem="FUj-tZ-6IH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jxe-KT-I6g"/>
+                <constraint firstItem="Hzd-Kk-Pr5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Pvp-uI-rCH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FUj-tZ-6IH" secondAttribute="trailing" id="QSM-Iq-7mc"/>
                 <constraint firstItem="FUj-tZ-6IH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pgn-6d-sij"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FUj-tZ-6IH" secondAttribute="bottom" id="qvi-nd-lPr"/>

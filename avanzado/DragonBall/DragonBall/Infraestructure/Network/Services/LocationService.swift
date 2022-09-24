@@ -10,10 +10,12 @@ import Foundation
 class LocationService {
     private let heroId: String
     private let token: String
+    private let service: Service<[Location]>
     
-    init(heroId: String, token: String) {
+    init(heroId: String, token: String, service: Service<[Location]>) {
         self.token = token
         self.heroId = heroId
+        self.service = service
     }
     
     func execute(completion: @escaping(([Location]?, Error?) ->Void)) {
@@ -33,7 +35,6 @@ class LocationService {
             
         }
         
-        let service: Service<[Location]> = Service()
         service.execute(urlRequest: urlRequest, completion: completion)
     }
     

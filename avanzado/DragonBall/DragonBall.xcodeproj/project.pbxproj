@@ -38,7 +38,6 @@
 		EE0F1A2C28DA757F0046716C /* ManagedObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F1A2B28DA757F0046716C /* ManagedObjectConvertible.swift */; };
 		EE0F1A2E28DA79560046716C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F1A2D28DA79550046716C /* CoreDataStack.swift */; };
 		EE0F1A3028DA79BD0046716C /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F1A2F28DA79BD0046716C /* CoreDataWorker.swift */; };
-		EE0F1A3528DA81D70046716C /* HeroApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F1A3428DA81D70046716C /* HeroApi.swift */; };
 		EE0F1A3728DA89170046716C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F1A3628DA89170046716C /* Util.swift */; };
 		EE0F1A3928DA8BFE0046716C /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F1A3828DA8BFE0046716C /* Endpoints.swift */; };
 		EE0F1A4028DA8F260046716C /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F1A3F28DA8F260046716C /* LaunchViewModel.swift */; };
@@ -47,15 +46,24 @@
 		EEC5225628DA993D007685EA /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5225428DA993D007685EA /* LaunchViewController.swift */; };
 		EEC5225728DA993D007685EA /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC5225528DA993D007685EA /* LaunchViewController.xib */; };
 		EEC5225A28DA9E6C007685EA /* HeroCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5225928DA9E6C007685EA /* HeroCoreDataRepository.swift */; };
-		EEC5228528DBD3C0007685EA /* HeroEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228328DBD3C0007685EA /* HeroEntity+CoreDataClass.swift */; };
 		EEC5228828DBDAC3007685EA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228728DBDAC3007685EA /* DetailViewModel.swift */; };
-		EEC5228A28DBE5D4007685EA /* LocationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228928DBE5D4007685EA /* LocationApi.swift */; };
-		EEC5228D28DBE70C007685EA /* LocationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228B28DBE70C007685EA /* LocationEntity+CoreDataClass.swift */; };
+		EEC5228A28DBE5D4007685EA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228928DBE5D4007685EA /* Location.swift */; };
 		EEC522A128DE35E0007685EA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5229F28DE35DF007685EA /* LocationViewController.swift */; };
 		EEC522A228DE35E0007685EA /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC522A028DE35DF007685EA /* LocationViewController.xib */; };
 		EEC522A428DE396D007685EA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC522A328DE396D007685EA /* LocationViewModel.swift */; };
 		EEC522A628DE406F007685EA /* LocationCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC522A528DE406F007685EA /* LocationCoreDataRepository.swift */; };
-		EEC522A828DE596A007685EA /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC522A728DE596A007685EA /* MKMapViewExtension.swift */; };
+		EEE8746F28DF3AC300818609 /* HeroMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8746B28DF3AC300818609 /* HeroMO+CoreDataClass.swift */; };
+		EEE8747128DF3AC300818609 /* LocationMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8746D28DF3AC300818609 /* LocationMO+CoreDataClass.swift */; };
+		EEE8747428DF3FD200818609 /* KeyChainConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747328DF3FD200818609 /* KeyChainConstant.swift */; };
+		EEE8747628DF41F700818609 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747528DF41F700818609 /* Hero.swift */; };
+		EEE8747828DF42D500818609 /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747728DF42D500818609 /* UrlRequest.swift */; };
+		EEE8747A28DF447C00818609 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747928DF447C00818609 /* HttpMethod.swift */; };
+		EEE8747F28DF740100818609 /* HeroCoreDataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747E28DF740100818609 /* HeroCoreDataRepositoryTest.swift */; };
+		EEE8748128DF7E8600818609 /* LocationCoreDataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8748028DF7E8600818609 /* LocationCoreDataRepositoryTest.swift */; };
+		EEE8748528DF972600818609 /* KeyChainStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8748428DF972600818609 /* KeyChainStoreTest.swift */; };
+		EEE8748F28DFA07700818609 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8748E28DFA07700818609 /* URLSessionMock.swift */; };
+		EEE8749128DFA4D400818609 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8749028DFA4D400818609 /* ServiceMock.swift */; };
+		EEE8749328DFB32E00818609 /* ServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8749228DFB32E00818609 /* ServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +119,6 @@
 		EE0F1A2B28DA757F0046716C /* ManagedObjectConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectConvertible.swift; sourceTree = "<group>"; };
 		EE0F1A2D28DA79550046716C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		EE0F1A2F28DA79BD0046716C /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
-		EE0F1A3428DA81D70046716C /* HeroApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroApi.swift; sourceTree = "<group>"; };
 		EE0F1A3628DA89170046716C /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		EE0F1A3828DA8BFE0046716C /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		EE0F1A3F28DA8F260046716C /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
@@ -120,15 +127,24 @@
 		EEC5225428DA993D007685EA /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		EEC5225528DA993D007685EA /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		EEC5225928DA9E6C007685EA /* HeroCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCoreDataRepository.swift; sourceTree = "<group>"; };
-		EEC5228328DBD3C0007685EA /* HeroEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EEC5228728DBDAC3007685EA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		EEC5228928DBE5D4007685EA /* LocationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApi.swift; sourceTree = "<group>"; };
-		EEC5228B28DBE70C007685EA /* LocationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EEC5228928DBE5D4007685EA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		EEC5229F28DE35DF007685EA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		EEC522A028DE35DF007685EA /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
 		EEC522A328DE396D007685EA /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		EEC522A528DE406F007685EA /* LocationCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreDataRepository.swift; sourceTree = "<group>"; };
-		EEC522A728DE596A007685EA /* MKMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
+		EEE8746B28DF3AC300818609 /* HeroMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EEE8746D28DF3AC300818609 /* LocationMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EEE8747328DF3FD200818609 /* KeyChainConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainConstant.swift; sourceTree = "<group>"; };
+		EEE8747528DF41F700818609 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		EEE8747728DF42D500818609 /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
+		EEE8747928DF447C00818609 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		EEE8747E28DF740100818609 /* HeroCoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCoreDataRepositoryTest.swift; sourceTree = "<group>"; };
+		EEE8748028DF7E8600818609 /* LocationCoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreDataRepositoryTest.swift; sourceTree = "<group>"; };
+		EEE8748428DF972600818609 /* KeyChainStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStoreTest.swift; sourceTree = "<group>"; };
+		EEE8748E28DFA07700818609 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		EEE8749028DFA4D400818609 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		EEE8749228DFB32E00818609 /* ServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				EE0F19BB28D6698B0046716C /* DragonBallTests.swift */,
+				EEE8747B28DF738700818609 /* Infraestructure */,
+				EEE8748E28DFA07700818609 /* URLSessionMock.swift */,
+				EEE8749028DFA4D400818609 /* ServiceMock.swift */,
 			);
 			path = DragonBallTests;
 			sourceTree = "<group>";
@@ -246,7 +265,6 @@
 			children = (
 				EE0F19DB28D66E7C0046716C /* UIImageViewExtension.swift */,
 				EE0F19EF28D74D080046716C /* UIViewControllerExtension.swift */,
-				EEC522A728DE596A007685EA /* MKMapViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,17 +291,17 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		EE0F19E428D67F1C0046716C /* Services */ = {
+		EE0F19E428D67F1C0046716C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EEE8748228DF7F9500818609 /* Services */,
 				EE0F1A3328DA7BE40046716C /* Models */,
-				EE0F19E528D67FCC0046716C /* LoginService.swift */,
 				EE0F19EB28D681B10046716C /* Service.swift */,
-				EE0F1A0628D7D2E30046716C /* HeroService.swift */,
-				EE0F1A0C28D7EEED0046716C /* LocationService.swift */,
 				EE0F1A3828DA8BFE0046716C /* Endpoints.swift */,
+				EEE8747728DF42D500818609 /* UrlRequest.swift */,
+				EEE8747928DF447C00818609 /* HttpMethod.swift */,
 			);
-			path = Services;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		EE0F19F128D756130046716C /* Utils */ = {
@@ -299,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				EE0F19F628D76D3D0046716C /* KeyChainStore.swift */,
+				EEE8747328DF3FD200818609 /* KeyChainConstant.swift */,
 			);
 			path = KeyChain;
 			sourceTree = "<group>";
@@ -331,7 +350,7 @@
 			children = (
 				EE0F1A1528D7F7E10046716C /* CoreData */,
 				EE0F19F528D76CFF0046716C /* KeyChain */,
-				EE0F19E428D67F1C0046716C /* Services */,
+				EE0F19E428D67F1C0046716C /* Network */,
 			);
 			path = Infraestructure;
 			sourceTree = "<group>";
@@ -339,8 +358,8 @@
 		EE0F1A3228DA7BAC0046716C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EEC5228B28DBE70C007685EA /* LocationEntity+CoreDataClass.swift */,
-				EEC5228328DBD3C0007685EA /* HeroEntity+CoreDataClass.swift */,
+				EEE8746B28DF3AC300818609 /* HeroMO+CoreDataClass.swift */,
+				EEE8746D28DF3AC300818609 /* LocationMO+CoreDataClass.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -348,8 +367,8 @@
 		EE0F1A3328DA7BE40046716C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EE0F1A3428DA81D70046716C /* HeroApi.swift */,
-				EEC5228928DBE5D4007685EA /* LocationApi.swift */,
+				EEC5228928DBE5D4007685EA /* Location.swift */,
+				EEE8747528DF41F700818609 /* Hero.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -397,6 +416,59 @@
 				EEC522A328DE396D007685EA /* LocationViewModel.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		EEE8747B28DF738700818609 /* Infraestructure */ = {
+			isa = PBXGroup;
+			children = (
+				EEE8748628DF9D3800818609 /* Network */,
+				EEE8748328DF95A200818609 /* KeyChain */,
+				EEE8747C28DF739A00818609 /* CoreData */,
+			);
+			path = Infraestructure;
+			sourceTree = "<group>";
+		};
+		EEE8747C28DF739A00818609 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EEE8747D28DF73A100818609 /* Repository */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		EEE8747D28DF73A100818609 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				EEE8747E28DF740100818609 /* HeroCoreDataRepositoryTest.swift */,
+				EEE8748028DF7E8600818609 /* LocationCoreDataRepositoryTest.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		EEE8748228DF7F9500818609 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EE0F19E528D67FCC0046716C /* LoginService.swift */,
+				EE0F1A0628D7D2E30046716C /* HeroService.swift */,
+				EE0F1A0C28D7EEED0046716C /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EEE8748328DF95A200818609 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				EEE8748428DF972600818609 /* KeyChainStoreTest.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		EEE8748628DF9D3800818609 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EEE8749228DFB32E00818609 /* ServiceTest.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,7 +617,8 @@
 				EE0F1A0D28D7EEED0046716C /* LocationService.swift in Sources */,
 				EEC5225A28DA9E6C007685EA /* HeroCoreDataRepository.swift in Sources */,
 				EE0F1A4328DA91AD0046716C /* Di.swift in Sources */,
-				EEC5228A28DBE5D4007685EA /* LocationApi.swift in Sources */,
+				EEC5228A28DBE5D4007685EA /* Location.swift in Sources */,
+				EEE8747A28DF447C00818609 /* HttpMethod.swift in Sources */,
 				EE0F1A1128D7F2D10046716C /* DetailViewController.swift in Sources */,
 				EE0F19AC28D6698A0046716C /* DragonBall.xcdatamodeld in Sources */,
 				EE0F1A3928DA8BFE0046716C /* Endpoints.swift in Sources */,
@@ -561,18 +634,19 @@
 				EE0F19F728D76D3D0046716C /* KeyChainStore.swift in Sources */,
 				EEC522A128DE35E0007685EA /* LocationViewController.swift in Sources */,
 				EE0F1A0228D78E950046716C /* HeroCollectionViewCell.swift in Sources */,
-				EEC522A828DE596A007685EA /* MKMapViewExtension.swift in Sources */,
 				EE0F19F328D7562B0046716C /* Dispatch.swift in Sources */,
+				EEE8747628DF41F700818609 /* Hero.swift in Sources */,
 				EE0F1A0728D7D2E30046716C /* HeroService.swift in Sources */,
-				EEC5228528DBD3C0007685EA /* HeroEntity+CoreDataClass.swift in Sources */,
 				EE0F1A2E28DA79560046716C /* CoreDataStack.swift in Sources */,
 				EE0F19A428D6698A0046716C /* SceneDelegate.swift in Sources */,
+				EEE8747428DF3FD200818609 /* KeyChainConstant.swift in Sources */,
+				EEE8746F28DF3AC300818609 /* HeroMO+CoreDataClass.swift in Sources */,
+				EEE8747828DF42D500818609 /* UrlRequest.swift in Sources */,
 				EE0F19E628D67FCC0046716C /* LoginService.swift in Sources */,
 				EE0F1A4628DA921C0046716C /* Navigation.swift in Sources */,
-				EE0F1A3528DA81D70046716C /* HeroApi.swift in Sources */,
+				EEE8747128DF3AC300818609 /* LocationMO+CoreDataClass.swift in Sources */,
 				EE0F19FE28D78B4D0046716C /* HomeViewController.swift in Sources */,
 				EE0F19EE28D6923F0046716C /* LoginViewModel.swift in Sources */,
-				EEC5228D28DBE70C007685EA /* LocationEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +654,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE8749328DFB32E00818609 /* ServiceTest.swift in Sources */,
+				EEE8749128DFA4D400818609 /* ServiceMock.swift in Sources */,
+				EEE8748F28DFA07700818609 /* URLSessionMock.swift in Sources */,
+				EEE8747F28DF740100818609 /* HeroCoreDataRepositoryTest.swift in Sources */,
+				EEE8748128DF7E8600818609 /* LocationCoreDataRepositoryTest.swift in Sources */,
 				EE0F19BC28D6698B0046716C /* DragonBallTests.swift in Sources */,
+				EEE8748528DF972600818609 /* KeyChainStoreTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

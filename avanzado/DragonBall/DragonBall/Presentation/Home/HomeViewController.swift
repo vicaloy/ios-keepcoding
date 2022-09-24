@@ -68,6 +68,7 @@ extension HomeViewController: HomeViewProtocol{
     }
     
     func onShowAlert(title: String, message: String, action: String) {
+        self.load(loading: false)
         showAlert(title: title, message: message, action: action)
     }
     

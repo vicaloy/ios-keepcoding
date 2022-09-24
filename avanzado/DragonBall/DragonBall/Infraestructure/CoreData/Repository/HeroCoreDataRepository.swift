@@ -8,9 +8,9 @@
 import Foundation
 
 class HeroCoreDataRepository {
-    let worker: CoreDataWorker<HeroEntity, Hero>
+    let worker: CoreDataWorker<HeroMO, Hero>
    
-    init(worker: CoreDataWorker<HeroEntity, Hero> = CoreDataWorker<HeroEntity, Hero>()){
+    init(worker: CoreDataWorker<HeroMO, Hero> = CoreDataWorker<HeroMO, Hero>()){
         self.worker = worker
     }
     
@@ -28,6 +28,13 @@ class HeroCoreDataRepository {
     
     func insert(heros: [Hero]){
         worker.upsert(entities: heros){ (error) in
+            guard let error = error else { return }
+            print("\(error)")
+        }
+    }
+    
+    func delete(heros: [Hero]){
+        worker.delete(entities: heros){ (error) in
             guard let error = error else { return }
             print("\(error)")
         }

@@ -11,10 +11,12 @@ class LoginService {
     
     private let user: String
     private let password: String
+    private let service: Service<String>
     
-    init(user: String, password: String) {
+    init(user: String, password: String, service: Service<String>) {
         self.user = user
         self.password = password
+        self.service = service
     }
     
     func execute(completion: @escaping((String?, Error?) ->Void)) {
@@ -31,7 +33,6 @@ class LoginService {
         urlRequest.httpMethod = HttpMethod.post.rawValue
         urlRequest.setValue("Basic \(credentials.base64EncodedString())", forHTTPHeaderField: "Authorization")
         
-        let service: Service<String> = Service()
         service.execute(urlRequest: urlRequest, completion: completion)
     }
 }

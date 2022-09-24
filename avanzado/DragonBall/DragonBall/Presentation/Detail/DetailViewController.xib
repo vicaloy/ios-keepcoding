@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="descip" destination="W5k-jg-42r" id="skx-7O-EhD"/>
                 <outlet property="image" destination="rxy-7Y-KF1" id="wLk-m2-JPy"/>
+                <outlet property="imgAcivityIndicator" destination="7d8-9T-lZr" id="DO3-GF-hKt"/>
                 <outlet property="name" destination="7Wg-7J-el7" id="Sm9-qV-Mx7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,6 +50,10 @@
                         <action selector="onLocationTap:" destination="-1" eventType="touchUpInside" id="wgi-wi-Kqz"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7d8-9T-lZr">
+                    <rect key="frame" x="197" y="134" width="20" height="20"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,8 +61,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7Wg-7J-el7" secondAttribute="trailing" constant="16" id="AFU-Bu-ahR"/>
                 <constraint firstItem="rxy-7Y-KF1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GHQ-MU-vS1"/>
                 <constraint firstItem="rxy-7Y-KF1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OUI-Yl-mIo"/>
+                <constraint firstItem="7d8-9T-lZr" firstAttribute="centerY" secondItem="rxy-7Y-KF1" secondAttribute="centerY" id="Q0d-QH-9lX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rxy-7Y-KF1" secondAttribute="trailing" id="UVT-e4-Uet"/>
                 <constraint firstItem="7Wg-7J-el7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="VG3-6M-d4A"/>
+                <constraint firstItem="7d8-9T-lZr" firstAttribute="centerX" secondItem="rxy-7Y-KF1" secondAttribute="centerX" id="XuB-0V-ZSK"/>
                 <constraint firstItem="7Wg-7J-el7" firstAttribute="top" secondItem="rxy-7Y-KF1" secondAttribute="bottom" constant="8" id="ZRT-1b-bDS"/>
                 <constraint firstItem="W5k-jg-42r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dBj-fB-CSP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W5k-jg-42r" secondAttribute="bottom" constant="16" id="emG-3q-7G8"/>

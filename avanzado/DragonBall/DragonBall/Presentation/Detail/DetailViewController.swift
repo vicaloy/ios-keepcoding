@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descip: UITextView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var imgAcivityIndicator: UIActivityIndicatorView!
     
     private var viewModel: DetailViewModelProtocol?
     
@@ -37,7 +38,9 @@ class DetailViewController: UIViewController {
 
     private func bindHero(hero: Hero){
         descip.text = hero.description
-        image.setImage(url: hero.photo)
+        image.setImage(url: hero.photo){
+            self.imgAcivityIndicator.stopAnimating()
+        }
         name.text = hero.name
     }
 }

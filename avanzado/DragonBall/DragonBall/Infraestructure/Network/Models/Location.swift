@@ -13,6 +13,11 @@ struct Location: Decodable, Equatable {
     var dateShow: String?
     var id: String
     var hero: Hero?
+    
+    static func == (a: Location, b: Location) -> Bool {
+        return (a.id == b.id && a.longitud==b.longitud && a.latitud == b.latitud
+                && a.dateShow == b.dateShow && a.hero == b.hero)
+        }
 }
 
 extension Location {

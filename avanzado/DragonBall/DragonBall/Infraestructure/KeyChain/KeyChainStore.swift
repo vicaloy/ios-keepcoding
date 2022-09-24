@@ -7,11 +7,7 @@
 
 import Foundation
 
-import Foundation
-
 class KeyChainStore {
-   let service = "DragonBall"
-    let loginTokenAccount = "LoginToken"
     
     func save(data: Data, service: String, account: String) {
 

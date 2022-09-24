@@ -10,10 +10,13 @@ import Foundation
 class HeroService {
     private let nameFilter: String
     private let token: String
+    private let service: Service<[Hero]>
+
     
-    init(nameFilter: String, token: String) {
+    init(nameFilter: String, token: String, service: Service<[Hero]>) {
         self.token = token
         self.nameFilter = nameFilter
+        self.service = service
     }
     
     func execute(completion: @escaping(([Hero]?, Error?) ->Void)) {
@@ -30,10 +33,8 @@ class HeroService {
         guard let urlRequest = urlRequest else {
             completion(nil, ServiceError.malformedURL)
             return
-            
         }
         
-        let service: Service<[Hero]> = Service()
         service.execute(urlRequest: urlRequest, completion: completion)
     }
     

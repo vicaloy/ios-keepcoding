@@ -14,14 +14,16 @@ protocol CoreDataServiceProtocol {
     var persistentContainer: NSPersistentContainer {get}
     var viewContext: NSManagedObjectContext {get}
     var backgroundContext: NSManagedObjectContext {get}
-    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void)
-    func performForegroundTask(_ block: @escaping (NSManagedObjectContext) -> Void)
+    func performBackgroundTask(completion: @escaping (NSManagedObjectContext) -> Void)
+    func performForegroundTask(completion: @escaping (NSManagedObjectContext) -> Void)
 }
 
-final class CoreDataService: CoreDataServiceProtocol {
+class CoreDataService: CoreDataServiceProtocol {
     
     static let shared = CoreDataService()
     var errorHandler: (Error) -> Void = {_ in }
+    
+    private init(){}
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DragonBall")
@@ -44,13 +46,13 @@ final class CoreDataService: CoreDataServiceProtocol {
         return self.persistentContainer.newBackgroundContext()
     }()
     
-    func performForegroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+    func performForegroundTask(completion: @escaping (NSManagedObjectContext) -> Void) {
         self.viewContext.perform {
-            block(self.viewContext)
+            completion(self.viewContext)
         }
     }
     
-    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
-        self.persistentContainer.performBackgroundTask(block)
+    func performBackgroundTask(completion: @escaping (NSManagedObjectContext) -> Void) {
+        self.persistentContainer.performBackgroundTask(completion)
     }
 }

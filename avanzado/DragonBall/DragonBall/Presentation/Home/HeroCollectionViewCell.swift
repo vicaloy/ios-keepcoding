@@ -11,6 +11,7 @@ class HeroCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var imgActivityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +25,9 @@ class HeroCollectionViewCell: UICollectionViewCell {
     
     func setHero(hero: Hero){
         name.text = hero.name
-        image.setImage(url: hero.photo)
+        image.setImage(url: hero.photo){
+            self.imgActivityIndicator.stopAnimating()
+        }
     }
 
 }

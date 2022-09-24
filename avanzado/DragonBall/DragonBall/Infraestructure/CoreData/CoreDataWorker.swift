@@ -8,47 +8,26 @@
 import Foundation
 import CoreData
 
-protocol CoreDataWorkerProtocol {
-    associatedtype EntityType
-    func get(with predicate: NSPredicate?,
-             sortDescriptors: [NSSortDescriptor]?,
-             fetchLimit: Int?,
-             completion: @escaping (Result<[EntityType], Error>) -> Void)
-    func upsert(entities: [EntityType],
-                completion: @escaping (Error?) -> Void)
-}
-
-extension CoreDataWorkerProtocol {
-    func get(with predicate: NSPredicate? = nil,
-             sortDescriptors: [NSSortDescriptor]? = nil,
-             fetchLimit: Int? = nil,
-             completion: @escaping (Result<[EntityType], Error>) -> Void){
-        get(with: predicate,
-            sortDescriptors: sortDescriptors,
-            fetchLimit: fetchLimit,
-            completion: completion)
-    }
-}
-
 enum CoreDataWorkerError: Error{
     case cannotFetch(String)
     case cannotSave(Error)
 }
 
-class CoreDataWorker<ManagedEntity, Entity>: CoreDataWorkerProtocol where
+class CoreDataWorker<ManagedEntity, Entity> where
     ManagedEntity: NSManagedObject,
     ManagedEntity: ManagedObjectProtocol,
 Entity: ManagedObjectConvertible {
     
     let coreData: CoreDataServiceProtocol
+    
     init(coreData: CoreDataServiceProtocol = CoreDataService.shared) {
         self.coreData = coreData
     }
     
-    func get(with predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, fetchLimit: Int?,
+    func get(with predicate: NSPredicate?=nil, sortDescriptors: [NSSortDescriptor]?=nil, fetchLimit: Int?=nil,
              completion: @escaping (Result<[Entity], Error>) -> Void) {
         
-        coreData.performForegroundTask { (context) in
+        coreData.performForegroundTask{ (context) in
             do {
                 let fetchRequest = ManagedEntity.fetchRequest()
                 fetchRequest.predicate = predicate
@@ -72,6 +51,21 @@ Entity: ManagedObjectConvertible {
                 return entity.toManagedObject(in: context) as? ManagedEntity
             })
             do {
+                try context.save()
+                completion(nil)
+            } catch {
+                completion(CoreDataWorkerError.cannotSave(error))
+            }
+        }
+    }
+    
+    func delete(entities: [Entity], completion: @escaping (Error?) -> Void) {
+        coreData.performBackgroundTask { (context) in
+            do {
+                entities.forEach{
+                    entity in
+                    entity.deleteManagedObject(in: context)
+                }
                 try context.save()
                 completion(nil)
             } catch {

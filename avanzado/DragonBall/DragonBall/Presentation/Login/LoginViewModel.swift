@@ -24,7 +24,7 @@ class LoginViewModel {
             self.viewDelegate?.onNavigateHome()
         }
         guard let data = token?.data(using: .utf8) else { return }
-        self.keyChain.save(data: data, service: keyChain.service, account: keyChain.loginTokenAccount)
+        self.keyChain.save(data: data, service: KeyChainConstant.service, account: KeyChainConstant.loginTokenAccount)
     }
     
     private func onLoginFailure(){
@@ -39,7 +39,7 @@ class LoginViewModel {
             self.viewDelegate?.onLoading(loading: true)
         }
         
-        let loginService = LoginService(user: user, password: password)
+        let loginService = LoginService(user: user, password: password, service: Service<String>())
         loginService.execute(){ token, error in
             switch (error as? ServiceError){
             case .none:

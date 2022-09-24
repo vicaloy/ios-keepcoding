@@ -33,6 +33,7 @@
                 </collectionView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="kJS-VV-fsX">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZC3-wV-nhV">
                     <rect key="frame" x="0.0" y="44" width="414" height="51"/>

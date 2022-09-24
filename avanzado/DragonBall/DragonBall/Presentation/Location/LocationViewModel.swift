@@ -10,7 +10,6 @@ import MapKit
 
 protocol LocationViewModelProtocol: AnyObject {
     func onViewsLoaded()
-    func onViewWillAppeared()
 }
 
 class LocationViewModel{
@@ -66,9 +65,9 @@ class LocationViewModel{
     }
     
     private func onLocationsLoadService(){
-        let data = keyChain.read(service: keyChain.service, account: keyChain.loginTokenAccount)
+        let data = keyChain.read(service: KeyChainConstant.service, account: KeyChainConstant.loginTokenAccount)
         let token = String(decoding: data ?? Data(), as: UTF8.self)
-        let locationService = LocationService(heroId: hero.id, token: token)
+        let locationService = LocationService(heroId: hero.id, token: token, service: Service<[Location]>())
         locationService.execute(){ locations, error in
             switch (error as? ServiceError){
             case .none:
@@ -98,11 +97,6 @@ class LocationViewModel{
 }
 
 extension LocationViewModel: LocationViewModelProtocol {
-    func onViewWillAppeared() {
-        
-    }
-    
-    
     func onViewsLoaded() {
         self.onLocationsLoadCoreData()
     }

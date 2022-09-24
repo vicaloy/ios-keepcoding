@@ -62,4 +62,9 @@ extension ManagedObjectProtocol where Self: NSManagedObject {
         return result
     }
     
+    static func delete(with id: String, from context: NSManagedObjectContext){
+        guard let result = single(with: id, from: context) else { return }
+        context.delete(result)
+    }
+    
 }

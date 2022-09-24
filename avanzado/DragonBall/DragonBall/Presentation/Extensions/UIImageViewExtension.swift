@@ -10,12 +10,17 @@ import UIKit
 typealias ImageCompletion = (UIImage?) -> Void
 extension UIImageView {
     
-    func setImage(url: URL?) {
+    func setImage(url: URL?, completion: @escaping () -> Void) {
         if(url != nil){
             downloadImageWithUrlSession(url: url!) { [weak self] image in
                 DispatchQueue.main.async {
+                    completion()
                     self?.image = image
                 }
+            }
+        }else{
+            DispatchQueue.main.async {
+                completion()
             }
         }
     }

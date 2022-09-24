@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ServiceError: Error {
+enum ServiceError: Error, Equatable {
     case malformedURL
     case emptyResponse
     case requestParams
@@ -17,9 +17,14 @@ enum ServiceError: Error {
 }
 
 class Service<T:Decodable> {
+    let session: URLSession
+    
+    init(session: URLSession = .shared){
+        self.session = session
+    }
     
     func execute(urlRequest: URLRequest, completion: @escaping ((T?, Error?) -> Void)){
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
                 completion(nil, ServiceError.unknown)
                 return
