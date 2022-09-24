@@ -35,3 +35,10 @@ func createDetailViewController(hero: Hero)->UIViewController{
     return detailViewController
 }
 
+func createLocationViewController(hero: Hero)->UIViewController{
+    let locationViewController = LocationViewController()
+    let locationViewModel = LocationViewModel(viewDelegate: locationViewController, hero: hero)
+    locationViewController.setViewModel(viewModel: locationViewModel)
+    return locationViewController
+}
+

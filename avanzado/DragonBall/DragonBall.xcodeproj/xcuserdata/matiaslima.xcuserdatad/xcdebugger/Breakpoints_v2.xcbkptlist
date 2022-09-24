@@ -39,33 +39,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "35D5573D-2BB7-424E-8362-F3D935954AB5"
-            shouldBeEnabled = "Yes"
+            uuid = "47408D4E-95A1-4847-8BA7-49FA7382BDFE"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DragonBall/Presentation/Home/HomeViewModel.swift"
+            filePath = "DragonBall/Infraestructure/Services/Service.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "onHerosLoadCoreData()"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "genericResponse(data:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BC63A2B4-4331-4A4D-B501-C278268B233F"
-            shouldBeEnabled = "Yes"
+            uuid = "6920009B-AC0E-4821-86DA-01C266697CB8"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DragonBall/Infraestructure/CoreData/CoreDataWorker.swift"
+            filePath = "DragonBall/Infraestructure/CoreData/Repository/LocationCoreDataRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "get(with:sortDescriptors:fetchLimit:completion:)"
-            landmarkType = "9">
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "insert(locations:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

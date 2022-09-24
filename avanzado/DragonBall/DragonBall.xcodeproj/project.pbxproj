@@ -51,6 +51,11 @@
 		EEC5228828DBDAC3007685EA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228728DBDAC3007685EA /* DetailViewModel.swift */; };
 		EEC5228A28DBE5D4007685EA /* LocationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228928DBE5D4007685EA /* LocationApi.swift */; };
 		EEC5228D28DBE70C007685EA /* LocationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5228B28DBE70C007685EA /* LocationEntity+CoreDataClass.swift */; };
+		EEC522A128DE35E0007685EA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5229F28DE35DF007685EA /* LocationViewController.swift */; };
+		EEC522A228DE35E0007685EA /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC522A028DE35DF007685EA /* LocationViewController.xib */; };
+		EEC522A428DE396D007685EA /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC522A328DE396D007685EA /* LocationViewModel.swift */; };
+		EEC522A628DE406F007685EA /* LocationCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC522A528DE406F007685EA /* LocationCoreDataRepository.swift */; };
+		EEC522A828DE596A007685EA /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC522A728DE596A007685EA /* MKMapViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +124,11 @@
 		EEC5228728DBDAC3007685EA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		EEC5228928DBE5D4007685EA /* LocationApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationApi.swift; sourceTree = "<group>"; };
 		EEC5228B28DBE70C007685EA /* LocationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EEC5229F28DE35DF007685EA /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		EEC522A028DE35DF007685EA /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		EEC522A328DE396D007685EA /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		EEC522A528DE406F007685EA /* LocationCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreDataRepository.swift; sourceTree = "<group>"; };
+		EEC522A728DE596A007685EA /* MKMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +228,7 @@
 		EE0F19D628D66CB90046716C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EEC5229E28DE35C3007685EA /* Location */,
 				EE0F1A4428DA91B80046716C /* Navigation */,
 				EE0F1A4128DA919F0046716C /* Di */,
 				EE0F1A3A28DA8DAB0046716C /* Launch */,
@@ -235,6 +246,7 @@
 			children = (
 				EE0F19DB28D66E7C0046716C /* UIImageViewExtension.swift */,
 				EE0F19EF28D74D080046716C /* UIViewControllerExtension.swift */,
+				EEC522A728DE596A007685EA /* MKMapViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,8 +384,19 @@
 			isa = PBXGroup;
 			children = (
 				EEC5225928DA9E6C007685EA /* HeroCoreDataRepository.swift */,
+				EEC522A528DE406F007685EA /* LocationCoreDataRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		EEC5229E28DE35C3007685EA /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				EEC5229F28DE35DF007685EA /* LocationViewController.swift */,
+				EEC522A028DE35DF007685EA /* LocationViewController.xib */,
+				EEC522A328DE396D007685EA /* LocationViewModel.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +510,7 @@
 				EE0F19FF28D78B4D0046716C /* HomeViewController.xib in Resources */,
 				EE0F19AE28D6698B0046716C /* Assets.xcassets in Resources */,
 				EE0F1A0328D78E950046716C /* HeroCollectionViewCell.xib in Resources */,
+				EEC522A228DE35E0007685EA /* LocationViewController.xib in Resources */,
 				EE0F19A928D6698A0046716C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,14 +550,18 @@
 				EE0F19AC28D6698A0046716C /* DragonBall.xcdatamodeld in Sources */,
 				EE0F1A3928DA8BFE0046716C /* Endpoints.swift in Sources */,
 				EE0F1A3728DA89170046716C /* Util.swift in Sources */,
+				EEC522A628DE406F007685EA /* LocationCoreDataRepository.swift in Sources */,
 				EE0F19EC28D681B10046716C /* Service.swift in Sources */,
 				EE0F1A2A28DA75400046716C /* ManagedObjectProtocol.swift in Sources */,
 				EEC5228828DBDAC3007685EA /* DetailViewModel.swift in Sources */,
 				EEC5225628DA993D007685EA /* LaunchViewController.swift in Sources */,
+				EEC522A428DE396D007685EA /* LocationViewModel.swift in Sources */,
 				EE0F1A3028DA79BD0046716C /* CoreDataWorker.swift in Sources */,
 				EE0F19A228D6698A0046716C /* AppDelegate.swift in Sources */,
 				EE0F19F728D76D3D0046716C /* KeyChainStore.swift in Sources */,
+				EEC522A128DE35E0007685EA /* LocationViewController.swift in Sources */,
 				EE0F1A0228D78E950046716C /* HeroCollectionViewCell.swift in Sources */,
+				EEC522A828DE596A007685EA /* MKMapViewExtension.swift in Sources */,
 				EE0F19F328D7562B0046716C /* Dispatch.swift in Sources */,
 				EE0F1A0728D7D2E30046716C /* HeroService.swift in Sources */,
 				EEC5228528DBD3C0007685EA /* HeroEntity+CoreDataClass.swift in Sources */,

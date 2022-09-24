@@ -19,12 +19,16 @@ extension LocationEntity: ManagedObjectProtocol {
 }
 
 extension Location: ManagedObjectConvertible {
+    func toExistingManagedObject(in context: NSManagedObjectContext) -> LocationEntity? {
+        return LocationEntity.getOrCreateSingle(with: id, from: context)
+    }
+    
     func toManagedObject(in context: NSManagedObjectContext) -> LocationEntity? {
         let location = LocationEntity.getOrCreateSingle(with: id, from: context)
         location.longitud = longitud
         location.latitud = latitud
         location.dateShow = dateShow
-        location.hero = hero?.toManagedObject(in: context)
+        location.hero = hero?.toExistingManagedObject(in: context)
         
         return location
     }

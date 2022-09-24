@@ -32,3 +32,8 @@ func navigateDetail(context: UIViewController, hero: Hero){
     let detailViewController = createDetailViewController(hero: hero)
     context.navigationController?.pushViewController(detailViewController, animated: true)
 }
+
+func navigateLocation(context: UIViewController, hero: Hero){
+    let locationViewController = createLocationViewController(hero: hero)
+    context.navigationController?.pushViewController(locationViewController, animated: true)
+}

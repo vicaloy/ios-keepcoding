@@ -9,18 +9,25 @@ import UIKit
 
 protocol DetailViewProtocol: AnyObject {
     func onBindHero(hero: Hero)
+    func onNavigateLocation(hero: Hero)
 }
 
 class DetailViewController: UIViewController {
     
+   
     @IBOutlet weak var descip: UITextView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
-
+    
     private var viewModel: DetailViewModelProtocol?
+    
+    @IBAction func onLocationTap(_ sender: Any){
+        viewModel?.onLocationTap()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Detail"
         viewModel?.onViewsLoaded()
     }
     
@@ -40,5 +47,8 @@ extension DetailViewController: DetailViewProtocol {
         self.bindHero(hero: hero)
     }
     
+    func onNavigateLocation(hero: Hero) {
+        navigateLocation(context: self, hero: hero)
+    }
     
 }

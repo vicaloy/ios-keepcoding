@@ -9,6 +9,7 @@ import Foundation
 
 protocol DetailViewModelProtocol: AnyObject {
     func onViewsLoaded()
+    func onLocationTap()
 }
 
 class DetailViewModel{
@@ -26,5 +27,9 @@ extension DetailViewModel: DetailViewModelProtocol {
     
     func onViewsLoaded() {
         self.viewDelegate?.onBindHero(hero: self.hero)
+    }
+    
+    func onLocationTap() {
+        self.viewDelegate?.onNavigateLocation(hero: hero)
     }
 }

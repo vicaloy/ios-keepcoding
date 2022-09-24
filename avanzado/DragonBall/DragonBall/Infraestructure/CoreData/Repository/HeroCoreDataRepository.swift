@@ -15,7 +15,7 @@ class HeroCoreDataRepository {
     }
     
     func fetch(completion: @escaping ([Hero]?) -> Void) {
-        worker.get{ [weak self](result: Result<[Hero], Error>) in
+        worker.get{(result: Result<[Hero], Error>) in
             switch result {
             case .success(let heros):
                 completion(heros)

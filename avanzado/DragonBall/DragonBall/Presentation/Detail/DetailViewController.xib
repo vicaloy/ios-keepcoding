@@ -41,6 +41,14 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93B-2c-8L2">
+                    <rect key="frame" x="369" y="44" width="45" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" image="location.circle.fill" catalog="system"/>
+                    <connections>
+                        <action selector="onLocationTap:" destination="-1" eventType="touchUpInside" id="wgi-wi-Kqz"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -53,13 +61,16 @@
                 <constraint firstItem="7Wg-7J-el7" firstAttribute="top" secondItem="rxy-7Y-KF1" secondAttribute="bottom" constant="8" id="ZRT-1b-bDS"/>
                 <constraint firstItem="W5k-jg-42r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dBj-fB-CSP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W5k-jg-42r" secondAttribute="bottom" constant="16" id="emG-3q-7G8"/>
+                <constraint firstItem="93B-2c-8L2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="glH-Tf-Rlk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W5k-jg-42r" secondAttribute="trailing" constant="16" id="kXR-bz-iRe"/>
                 <constraint firstItem="W5k-jg-42r" firstAttribute="top" secondItem="7Wg-7J-el7" secondAttribute="bottom" constant="16" id="lvg-Md-QDn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="93B-2c-8L2" secondAttribute="trailing" id="wQE-xn-bf2"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="83"/>
+            <point key="canvasLocation" x="131.8840579710145" y="82.366071428571431"/>
         </view>
     </objects>
     <resources>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

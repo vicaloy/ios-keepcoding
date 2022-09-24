@@ -19,10 +19,14 @@ extension HeroEntity: ManagedObjectProtocol {
 }
 
 extension Hero: ManagedObjectConvertible {
+    func toExistingManagedObject(in context: NSManagedObjectContext) -> HeroEntity? {
+        return HeroEntity.getOrCreateSingle(with: id, from: context)
+    }
+    
     func toManagedObject(in context: NSManagedObjectContext) -> HeroEntity? {
         let hero = HeroEntity.getOrCreateSingle(with: id, from: context)
         hero.name = name
-        hero.favorite = favorite
+        hero.favorite = favorite ?? false
         hero.descrip = description
         hero.photo = photo?.absoluteString
         return hero

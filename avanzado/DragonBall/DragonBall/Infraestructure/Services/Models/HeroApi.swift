@@ -14,7 +14,7 @@ struct Hero: Decodable {
     var name: String?
     var description: String?
     var photo: URL?
-    var favorite: Bool
+    var favorite: Bool?
 }
 
 extension Hero {
