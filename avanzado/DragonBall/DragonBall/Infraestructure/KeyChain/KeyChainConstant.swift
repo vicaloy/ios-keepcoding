@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KeyChainConstant{
+enum KeyChainConstant{
     static let service = "DragonBall"
     static let loginTokenAccount = "LoginToken"
 }

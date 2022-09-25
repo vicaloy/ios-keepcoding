@@ -21,7 +21,14 @@ class LaunchViewModel {
     }
     
     private func isAlreadyLoggedIn() -> Bool{
-        return keyChain.read(service: KeyChainConstant.service, account: KeyChainConstant.loginTokenAccount) != nil
+        if(!UserDefaultsData.isOpened()){
+            keyChain.delete(service: KeyChainConstant.service, account: KeyChainConstant.loginTokenAccount)
+            UserDefaultsData.setOpened()
+            return false
+        }else{
+            return keyChain.read(service: KeyChainConstant.service, account: KeyChainConstant.loginTokenAccount) != nil
+        }
+        
     }
     
     private func onLoggedIn(){
