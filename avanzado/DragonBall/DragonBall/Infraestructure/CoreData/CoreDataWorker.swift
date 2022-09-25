@@ -11,6 +11,7 @@ import CoreData
 enum CoreDataWorkerError: Error{
     case cannotFetch(String)
     case cannotSave(Error)
+    case cannotDelete(String)
 }
 
 class CoreDataWorker<ManagedEntity, Entity> where
@@ -63,13 +64,17 @@ Entity: ManagedObjectConvertible {
         coreData.performBackgroundTask { (context) in
             do {
                 entities.forEach{
-                    entity in
-                    entity.deleteManagedObject(in: context)
+                    guard let mo = $0.toExistingManagedObject(in: context)
+                    else{
+                        completion(CoreDataWorkerError.cannotDelete("Not existing managed object"))
+                        return
+                    }
+                    context.delete(mo)
                 }
                 try context.save()
                 completion(nil)
             } catch {
-                completion(CoreDataWorkerError.cannotSave(error))
+                completion(CoreDataWorkerError.cannotDelete("Cannot delete"))
             }
         }
     }

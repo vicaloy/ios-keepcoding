@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum ServiceErrorMock: Error {
+    case mock
+}
+
 class URLSessionMock: URLSession {
     
     override init() {}

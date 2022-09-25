@@ -67,7 +67,7 @@ class LocationViewModel{
     private func onLocationsLoadService(){
         let data = keyChain.read(service: KeyChainConstant.service, account: KeyChainConstant.loginTokenAccount)
         let token = String(decoding: data ?? Data(), as: UTF8.self)
-        let locationService = LocationService(heroId: hero.id, token: token, service: Service<[Location]>())
+        let locationService = LocationService(heroId: hero.id, token: token)
         locationService.execute(){ locations, error in
             switch (error as? ServiceError){
             case .none:

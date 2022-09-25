@@ -11,5 +11,4 @@ protocol ManagedObjectConvertible {
     associatedtype ManagedObject: NSManagedObject, ManagedObjectProtocol
     func toManagedObject(in context: NSManagedObjectContext) -> ManagedObject?
     func toExistingManagedObject(in context: NSManagedObjectContext) -> ManagedObject?
-    func deleteManagedObject(in context: NSManagedObjectContext)
 }

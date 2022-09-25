@@ -13,7 +13,7 @@ class HeroService {
     private let service: Service<[Hero]>
 
     
-    init(nameFilter: String, token: String, service: Service<[Hero]>) {
+    init(nameFilter: String, token: String, service: Service<[Hero]> = Service<[Hero]>()) {
         self.token = token
         self.nameFilter = nameFilter
         self.service = service

@@ -12,7 +12,7 @@ class LocationService {
     private let token: String
     private let service: Service<[Location]>
     
-    init(heroId: String, token: String, service: Service<[Location]>) {
+    init(heroId: String, token: String, service: Service<[Location]>=Service<[Location]>()) {
         self.token = token
         self.heroId = heroId
         self.service = service

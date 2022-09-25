@@ -54,7 +54,7 @@ class HomeViewModel{
     private func onHerosLoadService(){
         let data = keyChain.read(service: KeyChainConstant.service, account: KeyChainConstant.loginTokenAccount)
         let token = String(decoding: data ?? Data(), as: UTF8.self)
-        let heroService = HeroService(nameFilter: "", token: token, service: Service<[Hero]>())
+        let heroService = HeroService(nameFilter: "", token: token)
         heroService.execute(){ heros, error in
             switch (error as? ServiceError){
             case .none:

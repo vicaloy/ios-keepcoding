@@ -13,7 +13,6 @@
 		EE0F19AC28D6698A0046716C /* DragonBall.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE0F19AA28D6698A0046716C /* DragonBall.xcdatamodeld */; };
 		EE0F19AE28D6698B0046716C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0F19AD28D6698B0046716C /* Assets.xcassets */; };
 		EE0F19B128D6698B0046716C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0F19AF28D6698B0046716C /* LaunchScreen.storyboard */; };
-		EE0F19BC28D6698B0046716C /* DragonBallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F19BB28D6698B0046716C /* DragonBallTests.swift */; };
 		EE0F19C628D6698B0046716C /* DragonBallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F19C528D6698B0046716C /* DragonBallUITests.swift */; };
 		EE0F19C828D6698B0046716C /* DragonBallUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F19C728D6698B0046716C /* DragonBallUITestsLaunchTests.swift */; };
 		EE0F19DC28D66E7C0046716C /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0F19DB28D66E7C0046716C /* UIImageViewExtension.swift */; };
@@ -58,12 +57,15 @@
 		EEE8747628DF41F700818609 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747528DF41F700818609 /* Hero.swift */; };
 		EEE8747828DF42D500818609 /* UrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747728DF42D500818609 /* UrlRequest.swift */; };
 		EEE8747A28DF447C00818609 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747928DF447C00818609 /* HttpMethod.swift */; };
-		EEE8747F28DF740100818609 /* HeroCoreDataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8747E28DF740100818609 /* HeroCoreDataRepositoryTest.swift */; };
-		EEE8748128DF7E8600818609 /* LocationCoreDataRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8748028DF7E8600818609 /* LocationCoreDataRepositoryTest.swift */; };
 		EEE8748528DF972600818609 /* KeyChainStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8748428DF972600818609 /* KeyChainStoreTest.swift */; };
 		EEE8748F28DFA07700818609 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8748E28DFA07700818609 /* URLSessionMock.swift */; };
-		EEE8749128DFA4D400818609 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8749028DFA4D400818609 /* ServiceMock.swift */; };
-		EEE8749328DFB32E00818609 /* ServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8749228DFB32E00818609 /* ServiceTest.swift */; };
+		EEE8749528E0804B00818609 /* LoginServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8749428E0804B00818609 /* LoginServiceTest.swift */; };
+		EEE8749928E0897300818609 /* HeroServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8749828E0897300818609 /* HeroServiceTest.swift */; };
+		EEE8749C28E08BD600818609 /* heros.json in Resources */ = {isa = PBXBuildFile; fileRef = EEE8749B28E08BD600818609 /* heros.json */; };
+		EEE8749E28E08D7300818609 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = EEE8749D28E08D7300818609 /* empty.json */; };
+		EEE874A028E091CF00818609 /* MockUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE8749F28E091CF00818609 /* MockUtils.swift */; };
+		EEE874A228E0944B00818609 /* LocationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE874A128E0944B00818609 /* LocationServiceTest.swift */; };
+		EEE874A428E094FF00818609 /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = EEE874A328E094FF00818609 /* locations.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +95,6 @@
 		EE0F19B028D6698B0046716C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE0F19B228D6698B0046716C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE0F19B728D6698B0046716C /* DragonBallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE0F19BB28D6698B0046716C /* DragonBallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTests.swift; sourceTree = "<group>"; };
 		EE0F19C128D6698B0046716C /* DragonBallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE0F19C528D6698B0046716C /* DragonBallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallUITests.swift; sourceTree = "<group>"; };
 		EE0F19C728D6698B0046716C /* DragonBallUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -139,12 +140,15 @@
 		EEE8747528DF41F700818609 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		EEE8747728DF42D500818609 /* UrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequest.swift; sourceTree = "<group>"; };
 		EEE8747928DF447C00818609 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
-		EEE8747E28DF740100818609 /* HeroCoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCoreDataRepositoryTest.swift; sourceTree = "<group>"; };
-		EEE8748028DF7E8600818609 /* LocationCoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoreDataRepositoryTest.swift; sourceTree = "<group>"; };
 		EEE8748428DF972600818609 /* KeyChainStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStoreTest.swift; sourceTree = "<group>"; };
 		EEE8748E28DFA07700818609 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
-		EEE8749028DFA4D400818609 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
-		EEE8749228DFB32E00818609 /* ServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTest.swift; sourceTree = "<group>"; };
+		EEE8749428E0804B00818609 /* LoginServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceTest.swift; sourceTree = "<group>"; };
+		EEE8749828E0897300818609 /* HeroServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroServiceTest.swift; sourceTree = "<group>"; };
+		EEE8749B28E08BD600818609 /* heros.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = heros.json; sourceTree = "<group>"; };
+		EEE8749D28E08D7300818609 /* empty.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		EEE8749F28E091CF00818609 /* MockUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUtils.swift; sourceTree = "<group>"; };
+		EEE874A128E0944B00818609 /* LocationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceTest.swift; sourceTree = "<group>"; };
+		EEE874A328E094FF00818609 /* locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,10 +212,7 @@
 		EE0F19BA28D6698B0046716C /* DragonBallTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE0F19BB28D6698B0046716C /* DragonBallTests.swift */,
 				EEE8747B28DF738700818609 /* Infraestructure */,
-				EEE8748E28DFA07700818609 /* URLSessionMock.swift */,
-				EEE8749028DFA4D400818609 /* ServiceMock.swift */,
 			);
 			path = DragonBallTests;
 			sourceTree = "<group>";
@@ -423,26 +424,8 @@
 			children = (
 				EEE8748628DF9D3800818609 /* Network */,
 				EEE8748328DF95A200818609 /* KeyChain */,
-				EEE8747C28DF739A00818609 /* CoreData */,
 			);
 			path = Infraestructure;
-			sourceTree = "<group>";
-		};
-		EEE8747C28DF739A00818609 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				EEE8747D28DF73A100818609 /* Repository */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		EEE8747D28DF73A100818609 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				EEE8747E28DF740100818609 /* HeroCoreDataRepositoryTest.swift */,
-				EEE8748028DF7E8600818609 /* LocationCoreDataRepositoryTest.swift */,
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		EEE8748228DF7F9500818609 /* Services */ = {
@@ -466,9 +449,24 @@
 		EEE8748628DF9D3800818609 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				EEE8749228DFB32E00818609 /* ServiceTest.swift */,
+				EEE8749A28E089D000818609 /* Services */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		EEE8749A28E089D000818609 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEE8748E28DFA07700818609 /* URLSessionMock.swift */,
+				EEE8749428E0804B00818609 /* LoginServiceTest.swift */,
+				EEE8749828E0897300818609 /* HeroServiceTest.swift */,
+				EEE8749B28E08BD600818609 /* heros.json */,
+				EEE8749D28E08D7300818609 /* empty.json */,
+				EEE8749F28E091CF00818609 /* MockUtils.swift */,
+				EEE874A128E0944B00818609 /* LocationServiceTest.swift */,
+				EEE874A328E094FF00818609 /* locations.json */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +589,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE8749E28E08D7300818609 /* empty.json in Resources */,
+				EEE874A428E094FF00818609 /* locations.json in Resources */,
+				EEE8749C28E08BD600818609 /* heros.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,12 +655,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEE8749328DFB32E00818609 /* ServiceTest.swift in Sources */,
-				EEE8749128DFA4D400818609 /* ServiceMock.swift in Sources */,
+				EEE8749928E0897300818609 /* HeroServiceTest.swift in Sources */,
 				EEE8748F28DFA07700818609 /* URLSessionMock.swift in Sources */,
-				EEE8747F28DF740100818609 /* HeroCoreDataRepositoryTest.swift in Sources */,
-				EEE8748128DF7E8600818609 /* LocationCoreDataRepositoryTest.swift in Sources */,
-				EE0F19BC28D6698B0046716C /* DragonBallTests.swift in Sources */,
+				EEE8749528E0804B00818609 /* LoginServiceTest.swift in Sources */,
+				EEE874A228E0944B00818609 /* LocationServiceTest.swift in Sources */,
+				EEE874A028E091CF00818609 /* MockUtils.swift in Sources */,
 				EEE8748528DF972600818609 /* KeyChainStoreTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

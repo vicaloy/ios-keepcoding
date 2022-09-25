@@ -39,7 +39,7 @@ class LoginViewModel {
             self.viewDelegate?.onLoading(loading: true)
         }
         
-        let loginService = LoginService(user: user, password: password, service: Service<String>())
+        let loginService = LoginService(user: user, password: password)
         loginService.execute(){ token, error in
             switch (error as? ServiceError){
             case .none:

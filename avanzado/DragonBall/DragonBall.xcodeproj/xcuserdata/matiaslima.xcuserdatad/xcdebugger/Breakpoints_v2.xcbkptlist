@@ -103,17 +103,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D83281CC-85D7-454A-B87F-47825475C524"
+            uuid = "F79D3100-E681-40E7-8117-79157EF77EA6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DragonBallTests/Infraestructure/Network/Services/LoginServiceTest.swift"
+            filePath = "DragonBall/Infraestructure/CoreData/Repository/HeroCoreDataRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "testLoginParamsEmpty()"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "delete(heros:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82354F37-5AA0-4965-9FC5-19E2EA170E97"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBall/Infraestructure/CoreData/CoreDataWorker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "delete(entities:completion:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

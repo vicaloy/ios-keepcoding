@@ -19,9 +19,6 @@ extension LocationMO: ManagedObjectProtocol {
 }
 
 extension Location: ManagedObjectConvertible {
-    func deleteManagedObject(in context: NSManagedObjectContext) {
-        LocationMO.delete(with: id, from: context)
-    }
     
     func toExistingManagedObject(in context: NSManagedObjectContext) -> LocationMO? {
         return LocationMO.single(with: id, from: context)

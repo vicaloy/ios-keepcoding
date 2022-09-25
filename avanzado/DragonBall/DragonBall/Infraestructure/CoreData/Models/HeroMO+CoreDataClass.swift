@@ -19,9 +19,6 @@ extension HeroMO: ManagedObjectProtocol {
 }
 
 extension Hero: ManagedObjectConvertible {
-    func deleteManagedObject(in context: NSManagedObjectContext) {
-        HeroMO.delete(with: id, from: context)
-    }
     
     func toExistingManagedObject(in context: NSManagedObjectContext) -> HeroMO? {
         return HeroMO.single(with: id, from: context)

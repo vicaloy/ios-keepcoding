@@ -13,7 +13,7 @@ class LoginService {
     private let password: String
     private let service: Service<String>
     
-    init(user: String, password: String, service: Service<String>) {
+    init(user: String, password: String, service: Service<String> = Service<String>()) {
         self.user = user
         self.password = password
         self.service = service
