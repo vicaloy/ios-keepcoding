@@ -8,9 +8,10 @@
 import Foundation
 
 enum Endpoints{
-    static let login = "https://vapor2022.herokuapp.com/api/auth/login"
-    static let herosAll = "https://vapor2022.herokuapp.com/api/heros/all"
-    static let heroLocatios = "https://vapor2022.herokuapp.com/api/heros/locations"
+    static let base = "https://dragonball.keepcoding.education"
+    static let login = "\(base)/api/auth/login"
+    static let herosAll = "\(base)/api/heros/all"
+    static let heroLocatios = "\(base)/api/heros/locations"
 }
 
 
