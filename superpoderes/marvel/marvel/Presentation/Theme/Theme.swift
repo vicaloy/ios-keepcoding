@@ -12,5 +12,5 @@ class MarvelColor{
     static let red = UIColor(red: 236/255, green: 30/255, blue: 35/255, alpha: 1)
     static let redBlack = UIColor(red: 213/255, green: 32/255, blue: 32/255, alpha: 1)
     static let black = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 1)
+    static let blackAlpha = UIColor(red: 32/255, green: 32/255, blue: 32/255, alpha: 0.5)
 }
-

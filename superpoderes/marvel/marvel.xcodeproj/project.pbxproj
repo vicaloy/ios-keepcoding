@@ -19,7 +19,7 @@
 		EEAB55692904CE4000EDB4E7 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAB55682904CE4000EDB4E7 /* Font+Ext.swift */; };
 		EEAB556D2904E99C00EDB4E7 /* Nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAB556C2904E99C00EDB4E7 /* Nav.swift */; };
 		EEAB55702905000E00EDB4E7 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAB556F2905000E00EDB4E7 /* CharacterDetailView.swift */; };
-		EEAB55832905207B00EDB4E7 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAB55822905207B00EDB4E7 /* AsyncImageView.swift */; };
+		EEAB558B2905BBA600EDB4E7 /* ChacheAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAB558A2905BBA600EDB4E7 /* ChacheAsyncImage.swift */; };
 		EECA7F0D28FF80A200570832 /* marvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA7F0C28FF80A200570832 /* marvelApp.swift */; };
 		EECA7F0F28FF80A200570832 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECA7F0E28FF80A200570832 /* ContentView.swift */; };
 		EECA7F1128FF80A400570832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECA7F1028FF80A400570832 /* Assets.xcassets */; };
@@ -74,7 +74,7 @@
 		EEAB55682904CE4000EDB4E7 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
 		EEAB556C2904E99C00EDB4E7 /* Nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav.swift; sourceTree = "<group>"; };
 		EEAB556F2905000E00EDB4E7 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
-		EEAB55822905207B00EDB4E7 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		EEAB558A2905BBA600EDB4E7 /* ChacheAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChacheAsyncImage.swift; sourceTree = "<group>"; };
 		EECA7F0928FF80A200570832 /* marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECA7F0C28FF80A200570832 /* marvelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marvelApp.swift; sourceTree = "<group>"; };
 		EECA7F0E28FF80A200570832 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 		EEAB557629050EC800EDB4E7 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				EEAB55822905207B00EDB4E7 /* AsyncImageView.swift */,
+				EEAB558A2905BBA600EDB4E7 /* ChacheAsyncImage.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -475,7 +475,6 @@
 				EE12644929030C500041E1E8 /* CharacterItemView.swift in Sources */,
 				EEF7FF052903752F00CE67FC /* Secret.swift in Sources */,
 				EEF7FF0E2903795C00CE67FC /* BaseService.swift in Sources */,
-				EEAB55832905207B00EDB4E7 /* AsyncImageView.swift in Sources */,
 				EEF7FEFF290373F100CE67FC /* ApiError.swift in Sources */,
 				EEF7FF1E29047C8600CE67FC /* GradientView.swift in Sources */,
 				EECA7F1928FF80A400570832 /* marvel.xcdatamodeld in Sources */,
@@ -489,6 +488,7 @@
 				EEF7FEEA29034A2800CE67FC /* View+Ext.swift in Sources */,
 				EECA7F0D28FF80A200570832 /* marvelApp.swift in Sources */,
 				EEF7FF202904860300CE67FC /* NavigationView.swift in Sources */,
+				EEAB558B2905BBA600EDB4E7 /* ChacheAsyncImage.swift in Sources */,
 				EE12641A290221B40041E1E8 /* HomeScreenView.swift in Sources */,
 				EEF7FF082903755400CE67FC /* CharactersService.swift in Sources */,
 			);
