@@ -22,7 +22,7 @@ struct HomeScreenView: View {
         case .loading:
             return ProgressView().scaleEffect(2.0).toAnyView()
         case .error(let error):
-            return Text(error.localizedDescription).toAnyView()
+            return Text(error.localizedDescription).foregroundColor(.red).toAnyView()
         case .loaded:
             return CharactersListView(characters: $viewModel.data.characters,
                                       actionPerfomed: actionPerformed, position: $viewModel.data.position).toAnyView()

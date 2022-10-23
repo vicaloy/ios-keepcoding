@@ -9,8 +9,6 @@ import SwiftUI
 
 struct CharacterItemView: View {
     
-    @ObservedObject var imageDownloader = ImageDownloader()
-    
     private let character: Character
     
     init(character: Character) {
@@ -24,9 +22,14 @@ struct CharacterItemView: View {
                     gradient: .init(colors: [Color(MarvelColor.white), Color(MarvelColor.black)]),
                     startPoint: .init(x: 0.5, y: 0),
                     endPoint: .init(x: 0.5, y: 1)))
+                     
+                    
+        Text(character.name ?? "No name")
+            AsyncImageView(path: character.thumbnail?.path ?? "")
             
-            
-        }.frame(width: 450, height: 200)
+        }
+        .frame(width: 450, height: 200)
+        .padding(.bottom, 16)
         
     }
 }

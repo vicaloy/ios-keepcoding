@@ -7,37 +7,44 @@
 
 import SwiftUI
 
-struct AsyncImageView<Placeholder: View>: View {
-    @StateObject private var loader: ImageLoader
-    private let placeholder: Placeholder
-    private let image: (UIImage) -> Image
-    
-    init(
-        url: String?,
-        @ViewBuilder placeholder: () -> Placeholder,
-        @ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:)
-    ) {
-        self.placeholder = placeholder()
-        self.image = image
-        if url != nil && URL(string: url!) != nil{
-            _loader = StateObject(wrappedValue: ImageLoader(url: URL(string: url!)!, cache: Environment(\.imageCache).wrappedValue))
-        }else{
-            _loader = StateObject(wrappedValue: ImageLoader(url: URL(string: "https://www.google.com")!))
-        }
-    }
+struct AsyncImageView: View {
+    var path: String
     
     var body: some View {
-        content
-            .onAppear(perform: loader.load)
+        AsyncImage(url: URL(string: path), transaction: .init(animation: .spring(response: 1.6))) { phase in
+            onImageLoad(phase: phase)
+        }
     }
     
-    private var content: some View {
-        Group {
-            if loader.image != nil {
-                image(loader.image!)
-            } else {
-                placeholder
-            }
+    private func onImageLoad(phase: AsyncImagePhase)-> some View{
+        switch phase {
+        case .empty:
+            return ProgressView().toAnyView()
+        case .success(let image):
+            return retireveImage(image: image).toAnyView()
+        case .failure:
+            return retrieveTextError(text:"Network error.").toAnyView()
+        @unknown default:
+            return retrieveTextError(text: "Unknown error.").toAnyView()
         }
+    }
+    
+    private func retireveImage(image: Image)-> some View{
+        return image
+            .resizable()
+            .frame(width: 450, height: 200)
+            .padding(.bottom, 16)
+            .aspectRatio(contentMode: .fill)
+    }
+    
+    private func retrieveTextError(text: String)->some View{
+        return Text(text)
+            .foregroundColor(.red)
+    }
+}
+
+struct AsyncImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        AsyncImageView(path: "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16.jpg")
     }
 }

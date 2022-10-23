@@ -42,8 +42,8 @@ class HomeViewModel: ObservableObject {
         self.data.changeState(newState: HomeState.loaded)
         self.service.execute(searchTerm: searchTerm.value, page: self.data.page)
             .sink(receiveCompletion: { completion in
-              self.retrieveError(completion: completion)
-              
+                self.retrieveError(completion: completion)
+                
             }){ response in
                 self.retrieveCharacters(response: response, searchTerm: searchTerm)
             }.store(in: &cancellableSet)
@@ -66,14 +66,29 @@ class HomeViewModel: ObservableObject {
             let limitPage = self.data.characters.count/self.data.page
             position = limitPage * (self.data.page - 1)
         }
-       
+        
         return position
     }
     
     private func retrieveCharacters(response: CharacterResponse, searchTerm: CurrentValueSubject<String, Never>){
         if let characters = response.data?.results{
-            self.data.characters.append(contentsOf: characters)
+            let secure = toHttpsImageCharacters(characters: characters)
+            self.data.characters.append(contentsOf: secure)
             self.data.position = positionOnPageChange()
+        }
+    }
+    
+    private func toHttpsImageCharacters(characters: [Character]) -> [Character] {
+        return characters.map{
+            if($0.thumbnail?.path?.contains("https") == false){
+                var path = String($0.thumbnail?.path ?? "")+"."+String($0.thumbnail?.thumbnailExtension ?? "")
+                path.replace("http", with: "https")
+                let thumbnail = Thumbnail(path: path, thumbnailExtension: $0.thumbnail?.thumbnailExtension)
+                
+                return Character(id: $0.id, name: $0.name, description: $0.description, modified: $0.modified, thumbnail: thumbnail, resourceURI: $0.resourceURI, comics: $0.comics, series: $0.series, stories: $0.stories, events: $0.events, urls: $0.urls)
+            }else{
+                return $0
+            }
         }
     }
     

@@ -65,10 +65,11 @@ struct CharactersListView: View {
         
     }
     
+    
     private func onCharacterNavigation(character: Character, proxy: ScrollViewProxy) -> some View{
         return NavigationLink(destination: CharacterDetailView(isNavigationBarHidden: self.$isNavigationBarHidden)) {
             CharacterItemView(character: character)
-                .padding(.bottom, 10)
+                
         }
         .onAppear(){
             actionPerfomed?(.nextPage, character)

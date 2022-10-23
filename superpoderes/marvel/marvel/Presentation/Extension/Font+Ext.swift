@@ -18,8 +18,5 @@ extension Font {
         let fontURL = Bundle.main.url(forResource: name, withExtension: withExtension)!
         var error: Unmanaged<CFError>?
         CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
-        if let error = error {
-            print(error.takeUnretainedValue())
-        }
     }
 }
