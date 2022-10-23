@@ -8,5 +8,17 @@
 import SwiftUI
 
 extension View {
-    func eraseToAnyView() -> AnyView { AnyView(self) }
+    func toAnyView() -> AnyView {
+        AnyView(self)
+    }
 }
+
+extension UICollectionReusableView {
+    override open var backgroundColor: UIColor? {
+        get { .clear }
+        set { }
+    }
+}
+
+
+

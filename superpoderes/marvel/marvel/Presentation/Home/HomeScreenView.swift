@@ -18,14 +18,15 @@ struct HomeScreenView: View {
     private var content: some View {
         switch viewModel.data.state {
         case .none:
-            return Color.clear.eraseToAnyView()
+            return Color(UIColor.systemIndigo).toAnyView()
         case .loading:
-            return ProgressView().scaleEffect(2.0).eraseToAnyView()
+            return ProgressView().scaleEffect(2.0).toAnyView()
         case .error(let error):
-            return Text(error.localizedDescription).eraseToAnyView()
+            return Text(error.localizedDescription).toAnyView()
         case .loaded:
             return CharactersListView(characters: $viewModel.data.characters,
-                                      actionPerfomed: actionPerformed, position: $viewModel.data.position).eraseToAnyView()
+                                      actionPerfomed: actionPerformed, position: $viewModel.data.position).toAnyView()
+            
         }
     }
     
