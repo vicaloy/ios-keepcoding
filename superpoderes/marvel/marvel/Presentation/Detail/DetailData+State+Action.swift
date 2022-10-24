@@ -1,21 +1,21 @@
 //
-//  HomeData+State+Action.swift
+//  DetailData+State+Action.swift
 //  marvel
 //
-//  Created by Victoria Aloy on 21/10/22.
+//  Created by Victoria Aloy on 23/10/22.
 //
 
 import Foundation
 import Combine
 
-struct HomeData {
-    var characters: [Character] = []
-    var state: HomeState = .none
+struct DetailData {
+    var state: DetailState = .none
+    var characters: Character = Character(id: nil, name: nil, description: nil, modified: nil, thumbnail: nil, resourceURI: nil, comics: nil, series: nil, stories: nil, events: nil, urls: nil)
+    var series: [Serie] = []
     var page: Int = 0
     var position: Int = 0
-    var searchTerm: CurrentValueSubject<String, Never> = CurrentValueSubject<String, Never>("")
     
-    mutating func changeState(newState: HomeState) {
+    mutating func changeState(newState: DetailState) {
         state = newState
     }
     
@@ -28,14 +28,14 @@ struct HomeData {
     }
 }
 
-enum HomeAction {
+enum DetailAction {
     case reloadPage
-    case nextPage(current: Character)
+    case nextPage(current: Serie)
     case newSearch
 }
 
-enum HomeState: Equatable {
-    static func == (lhs: HomeState, rhs: HomeState) -> Bool {
+enum DetailState: Equatable {
+    static func == (lhs: DetailState, rhs: DetailState) -> Bool {
         switch(lhs, rhs){
         case(.none, .none):
             return true

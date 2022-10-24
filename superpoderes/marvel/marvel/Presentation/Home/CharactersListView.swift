@@ -10,13 +10,13 @@ import SwiftUI
 struct CharactersListView: View {
     
     @Binding var characters: [Character]
-    var actionPerfomed: ((HomeAction, Character) -> Void)?
+    var actionPerfomed: ((HomeAction) -> Void)?
     @Binding var position: Int
     
     @State private var searchText = ""
     @State private var isNavigationBarHidden: Bool = false
     
-    init(characters: Binding<[Character]>, actionPerfomed: ((HomeAction, Character) -> Void)? = nil, position: Binding<Int>, searchText: String = "") {
+    init(characters: Binding<[Character]>, actionPerfomed: ((HomeAction) -> Void)? = nil, position: Binding<Int>, searchText: String = "") {
         self._characters = characters
         self.actionPerfomed = actionPerfomed
         self._position = position
@@ -31,8 +31,8 @@ struct CharactersListView: View {
                 .onAppear {
                     self.isNavigationBarHidden = false
                 }
-                
-        }
+            
+        }.accentColor(Color(MarvelColor.white))
     }
     
     private func configureNavView(){
@@ -67,14 +67,17 @@ struct CharactersListView: View {
     
     
     private func onCharacterNavigation(character: Character, proxy: ScrollViewProxy) -> some View{
-        return NavigationLink(destination: CharacterDetailView(isNavigationBarHidden: self.$isNavigationBarHidden)) {
+        let detailViewModel = DetailViewModel(data: DetailData(), character: character)
+        let detailScreenView = DetailScreenView(viewModel: detailViewModel, isNavigationBarHidden: self.$isNavigationBarHidden)
+        
+        return NavigationLink(destination: detailScreenView) {
             CharacterItemView(character: character)
-                
         }
         .onAppear(){
-            actionPerfomed?(.nextPage, character)
+            actionPerfomed?(.nextPage(current: character))
             proxy.scrollTo(position)
         }
+        
     }
     
     private func onMarvelText()-> some View {

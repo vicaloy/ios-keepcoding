@@ -45,6 +45,7 @@ struct CharacterItemView: View {
     private func onResizeImage(image: Image) -> some View{
         return image.resizable()
             .frame(width: 450, height: 300)
+            .cornerRadius(25)
             .padding(.bottom, 16)
             .aspectRatio(contentMode: .fill)
     }
@@ -80,10 +81,10 @@ struct CharacterItemView: View {
 struct CharacterItemView_Previews: PreviewProvider {
     static var character = Character(
         id:1,
-        name: "Nombre",
+        name: "Agent Brand",
         description: nil,
         modified: nil,
-        thumbnail: nil,
+        thumbnail: CharacterThumbnail(path: "https://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg", thumbnailExtension: "jpg"),
         resourceURI: nil,
         comics:nil,
         series: nil,

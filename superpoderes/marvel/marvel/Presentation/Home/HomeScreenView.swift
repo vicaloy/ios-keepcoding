@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     
     @ObservedObject var viewModel: HomeViewModel
+    @State var isScreenDisplayed = false
     
     var body: some View {
         content
@@ -18,7 +19,7 @@ struct HomeScreenView: View {
     private var content: some View {
         switch viewModel.data.state {
         case .none:
-            return Color(UIColor.systemIndigo).toAnyView()
+            return Color.clear.toAnyView()
         case .loading:
             return ProgressView().scaleEffect(2.0).toAnyView()
         case .error(let error):
@@ -30,8 +31,8 @@ struct HomeScreenView: View {
         }
     }
     
-    private func actionPerformed(action: HomeAction, current: Character) {
-        viewModel.actionPerformed(action: action, current: current)
+    private func actionPerformed(action: HomeAction) {
+        viewModel.actionPerformed(action: action)
     }
     
 }

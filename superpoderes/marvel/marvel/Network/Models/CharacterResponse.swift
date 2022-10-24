@@ -13,10 +13,10 @@ struct CharacterResponse: Codable {
     let attributionText: String?
     let attributionHTML: String?
     let etag: String?
-    var data: DataResponse?
+    var data: CharacterData?
 }
 
-struct DataResponse: Codable {
+struct CharacterData: Codable {
     let offset, limit, total, count: Int?
     var results: [Character]?
 }
@@ -39,12 +39,12 @@ struct Character: Codable, Hashable {
     let id: Int?
     let name, description: String?
     let modified: Date?
-    let thumbnail: Thumbnail?
+    let thumbnail: CharacterThumbnail?
     let resourceURI: String?
-    let comics, series: Comics?
-    let stories: Stories?
-    let events: Comics?
-    let urls: [URLElement]?
+    let comics, series: CharacterComics?
+    let stories: CharacterStories?
+    let events: CharacterComics?
+    let urls: [CharacterURLElement]?
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -53,8 +53,8 @@ struct Character: Codable, Hashable {
     }
 }
 
-struct Comics: Codable, Hashable {
-    static func == (lhs: Comics, rhs: Comics) -> Bool {
+struct CharacterComics: Codable, Hashable {
+    static func == (lhs: CharacterComics, rhs: CharacterComics) -> Bool {
         lhs.available == rhs.available &&
         lhs.collectionURI == rhs.collectionURI &&
         lhs.items == rhs.items &&
@@ -63,17 +63,17 @@ struct Comics: Codable, Hashable {
     
     let available: Int?
     let collectionURI: String?
-    let items: [ComicsItem]?
+    let items: [CharacterComicsItem]?
     let returned: Int?
 }
 
-struct ComicsItem: Codable, Hashable {
+struct CharacterComicsItem: Codable, Hashable {
     let resourceURI: String?
     let name: String?
 }
 
-struct Stories: Codable, Hashable {
-    static func == (lhs: Stories, rhs: Stories) -> Bool {
+struct CharacterStories: Codable, Hashable {
+    static func == (lhs: CharacterStories, rhs: CharacterStories) -> Bool {
         lhs.available == rhs.available &&
         lhs.collectionURI == rhs.collectionURI &&
         lhs.items == rhs.items &&
@@ -82,17 +82,17 @@ struct Stories: Codable, Hashable {
     
     let available: Int?
     let collectionURI: String?
-    let items: [StoriesItem]?
+    let items: [CharacterStoriesItem]?
     let returned: Int?
 }
 
-struct StoriesItem: Codable, Hashable {
+struct CharacterStoriesItem: Codable, Hashable {
     let resourceURI: String?
     let name: String?
     let type: String?
 }
 
-struct Thumbnail: Codable, Hashable {
+struct CharacterThumbnail: Codable, Hashable {
     let path: String?
     let thumbnailExtension: String?
 
@@ -102,12 +102,12 @@ struct Thumbnail: Codable, Hashable {
     }
 }
 
-struct URLElement: Codable, Hashable {
-    let type: URLType?
+struct CharacterURLElement: Codable, Hashable {
+    let type: CharacterURLType?
     let url: String?
 }
 
-enum URLType: String, Codable {
+enum CharacterURLType: String, Codable {
     case comiclink = "comiclink"
     case detail = "detail"
     case wiki = "wiki"
