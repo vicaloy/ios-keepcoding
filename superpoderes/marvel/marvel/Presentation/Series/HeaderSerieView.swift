@@ -7,13 +7,16 @@
 
 import SwiftUI
 
-struct HeaderDetailView: View {
+struct HeaderSerieView: View {
+    
+    let character: Character
+    
     var body: some View {
-        onCharacterArea()
+        onContent()
     }
     
-    private func onCharacterArea() -> some View {
-        return Group{
+    private func onContent() -> some View {
+        return ZStack{
             onCharacterImage()
             Group{
                 onBackgroundCharacterName()
@@ -23,7 +26,7 @@ struct HeaderDetailView: View {
     }
     
     private func onCharacterImage()-> some View{
-        return CacheAsyncImage(url: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg")!) { phase in
+        return CacheAsyncImage(url: character.thumbnail) { phase in
             onImageDownloaded(phase: phase)
         }
     }
@@ -51,7 +54,7 @@ struct HeaderDetailView: View {
     }
     
     private func onCharacterName()-> some View{
-        return Text("Agent Brand")
+        return Text(character.name)
             .font(.system(size: 36)).fontWeight(Font.Weight.black)
             .foregroundColor(Color(MarvelColor.white))
     }
@@ -65,7 +68,13 @@ struct HeaderDetailView: View {
 }
 
 struct HeaderDetailView_Previews: PreviewProvider {
+    static var character = Character(
+        id:1,
+        name: "Agent Brand",
+        thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg")!
+    )
+    
     static var previews: some View {
-        HeaderDetailView()
+        HeaderSerieView(character: character)
     }
 }

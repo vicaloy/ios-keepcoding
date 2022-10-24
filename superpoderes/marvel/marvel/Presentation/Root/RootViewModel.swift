@@ -9,10 +9,10 @@ import SwiftUI
 
 class RootViewModel: ObservableObject {
     
-    @Published var currentScreen: Screen = .home
+    @Published var currentScreen: Screen = .characters
     
 }
 
 enum Screen {
-    case home
+    case characters
 }

@@ -8,15 +8,10 @@
 import Foundation
 import Combine
 
-class SeriesService{
-    var service: BaseService<SerieResponse>
-    
-    init(service: BaseService<SerieResponse> = BaseService()) {
-        self.service = service
-    }
+class SeriesService: BaseService<ResponseApi<SerieApi>>{
     
     func execute(serieId: String? = nil, page: Int = 0,
-                 limit: Int = 20) -> AnyPublisher<SerieResponse, APIError> {
+                 limit: Int = 20) -> AnyPublisher<ResponseApi<SerieApi>, APIError> {
         var endPoint = Endpoints.series
         var pageParams = ""
         let pageNumber = (page < 0 ? 0 : page)
@@ -31,7 +26,7 @@ class SeriesService{
         
         if let url = URL(string: urlString){
             
-            return service.buildRequest(url: url, httpMethod: HttpMethod.get)
+            return buildRequest(url: url, httpMethod: HttpMethod.get)
         }
         
         return Fail(error:APIError.urlError).eraseToAnyPublisher()

@@ -1,41 +1,37 @@
 //
-//  HomeData+State+Action.swift
-//  marvel
+//  BaseData+State+Action.swift
+//  Marvel
 //
-//  Created by Victoria Aloy on 21/10/22.
+//  Created by Victoria Aloy on 24/10/22.
 //
 
-import Foundation
 import Combine
 
-struct HomeData {
-    var characters: [Character] = []
-    var state: HomeState = .none
+struct BaseData<T>{
+    var data: [T] = []
+    var state: BaseState = .none
     var page: Int = 0
-    var position: Int = 0
+    
     var searchTerm: CurrentValueSubject<String, Never> = CurrentValueSubject<String, Never>("")
     
-    mutating func changeState(newState: HomeState) {
+    mutating func changeState(newState: BaseState) {
         state = newState
     }
     
     mutating func changePage(newPageNumber: Int){
         page = newPageNumber
     }
-    
-    mutating func changePosition(newPosition: Int){
-        position = newPosition
-    }
 }
 
-enum HomeAction {
-    case reloadPage
-    case nextPage(current: Character)
-    case newSearch
+enum BaseAction<T>{
+    case nextPage
+    case clickItem(item: T)
+    case searchTerm
+    case load
 }
 
-enum HomeState: Equatable {
-    static func == (lhs: HomeState, rhs: HomeState) -> Bool {
+enum BaseState: Equatable {
+    static func == (lhs: BaseState, rhs: BaseState) -> Bool {
         switch(lhs, rhs){
         case(.none, .none):
             return true
@@ -54,5 +50,3 @@ enum HomeState: Equatable {
     case loaded
     case error(Error)
 }
-
-

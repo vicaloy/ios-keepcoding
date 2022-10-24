@@ -13,8 +13,8 @@ struct RootView: View {
     
     var body: some View {
         switch rootViewModel.currentScreen {
-        case .home:
-            HomeScreenView(viewModel: HomeViewModel(data: HomeData()))
+        case .characters:
+            CharactersScreenView(viewModel: CharactersViewModel(data: BaseData<Character>(), service: CharactersService()))
         }
     }
 }

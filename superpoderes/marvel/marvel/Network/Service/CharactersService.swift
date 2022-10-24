@@ -8,15 +8,10 @@
 import Foundation
 import Combine
 
-class CharactersService{
-    var service: BaseService<CharacterResponse>
-    
-    init(service: BaseService<CharacterResponse> = BaseService()) {
-        self.service = service
-    }
+class CharactersService: BaseService<ResponseApi<CharacterApi>>{
     
     func execute(characterId: String? = nil, searchTerm: String? = nil, page: Int = 0,
-                 limit: Int = 20) -> AnyPublisher<CharacterResponse, APIError> {
+                 limit: Int = 20) -> AnyPublisher<ResponseApi<CharacterApi>, APIError> {
         var endPoint = Endpoints.characters
         var pageParams = ""
         let pageNumber = (page < 0 ? 0 : page)
@@ -33,7 +28,7 @@ class CharactersService{
         
         if let url = URL(string: urlString){
             
-            return service.buildRequest(url: url, httpMethod: HttpMethod.get)
+            return buildRequest(url: url, httpMethod: HttpMethod.get)
         }
         
         return Fail(error:APIError.urlError).eraseToAnyPublisher()

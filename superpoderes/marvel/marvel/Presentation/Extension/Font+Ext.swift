@@ -15,8 +15,10 @@ extension Font {
         self.register(name: "Marvel-Regular", withExtension: "ttf")
     }
     static func register(name: String, withExtension: String) {
-        let fontURL = Bundle.main.url(forResource: name, withExtension: withExtension)!
         var error: Unmanaged<CFError>?
-        CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
+        if let fontURL = Bundle.main.url(forResource: name, withExtension: withExtension){
+            CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
+        }
+        
     }
 }

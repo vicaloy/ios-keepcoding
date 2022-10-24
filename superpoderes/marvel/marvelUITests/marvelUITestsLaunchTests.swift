@@ -1,13 +1,13 @@
 //
-//  marvelUITestsLaunchTests.swift
-//  marvelUITests
+//  MarvelUITestsLaunchTests.swift
+//  MarvelUITests
 //
-//  Created by Victoria Aloy on 18/10/22.
+//  Created by Victoria Aloy on 24/10/22.
 //
 
 import XCTest
 
-final class marvelUITestsLaunchTests: XCTestCase {
+final class MarvelUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -1,15 +1,14 @@
 //
-//  marvelApp.swift
-//  marvel
+//  MarvelApp.swift
+//  Marvel
 //
-//  Created by Victoria Aloy on 18/10/22.
+//  Created by Victoria Aloy on 24/10/22.
 //
 
 import SwiftUI
 
 @main
-struct marvelApp: App {
-    
+struct MarvelApp: App {
     @StateObject var rootViewModel = RootViewModel()
     
     init(){
@@ -21,12 +20,4 @@ struct marvelApp: App {
             RootView().environmentObject(rootViewModel)
         }
     }
-    /*let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
-    }*/
 }

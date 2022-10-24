@@ -1,14 +1,14 @@
 //
-//  marvelTests.swift
-//  marvelTests
+//  MarvelTests.swift
+//  MarvelTests
 //
-//  Created by Victoria Aloy on 18/10/22.
+//  Created by Victoria Aloy on 24/10/22.
 //
 
 import XCTest
-@testable import marvel
+@testable import Marvel
 
-final class marvelTests: XCTestCase {
+final class MarvelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
