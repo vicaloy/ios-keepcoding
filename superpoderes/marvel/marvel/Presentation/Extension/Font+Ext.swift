@@ -1,9 +1,3 @@
-//
-//  Font+Ext.swift
-//  marvel
-//
-//  Created by Victoria Aloy on 22/10/22.
-//
 
 import Foundation
 import SwiftUI

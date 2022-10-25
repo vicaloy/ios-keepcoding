@@ -1,9 +1,3 @@
-//
-//  CharacterItem.swift
-//  marvel
-//
-//  Created by Victoria Aloy on 21/10/22.
-//
 
 import SwiftUI
 
@@ -77,7 +71,8 @@ struct CharacterItemView_Previews: PreviewProvider {
     static var character = Character(
         id:1,
         name: "Agent Brand",
-        thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg")!
+        thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg")!,
+        description: "Description"
     )
     static var previews: some View {
         CharacterItemView(character: character)

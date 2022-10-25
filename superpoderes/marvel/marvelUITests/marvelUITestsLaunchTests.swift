@@ -1,9 +1,4 @@
-//
-//  MarvelUITestsLaunchTests.swift
-//  MarvelUITests
-//
-//  Created by Victoria Aloy on 24/10/22.
-//
+
 
 import XCTest
 

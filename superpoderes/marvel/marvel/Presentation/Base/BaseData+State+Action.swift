@@ -1,16 +1,9 @@
-//
-//  BaseData+State+Action.swift
-//  Marvel
-//
-//  Created by Victoria Aloy on 24/10/22.
-//
 
 import Combine
 
 struct BaseData<T>{
     var data: [T] = []
     var state: BaseState = .none
-    var page: Int = 0
     
     var searchTerm: CurrentValueSubject<String, Never> = CurrentValueSubject<String, Never>("")
     
@@ -18,9 +11,6 @@ struct BaseData<T>{
         state = newState
     }
     
-    mutating func changePage(newPageNumber: Int){
-        page = newPageNumber
-    }
 }
 
 enum BaseAction<T>{

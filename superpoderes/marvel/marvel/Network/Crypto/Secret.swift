@@ -1,9 +1,4 @@
-//
-//  Secret.swift
-//  marvel
-//
-//  Created by Victoria Aloy on 21/10/22.
-//
+
 
 import Foundation
 import CryptoKit

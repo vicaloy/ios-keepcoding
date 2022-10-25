@@ -1,17 +1,18 @@
-//
-//  SerieViewModel.swift
-//  Marvel
-//
-//  Created by Victoria Aloy on 24/10/22.
-//
 
 import Foundation
 import Combine
 
-class SeriesViewModel: BaseViewModel<Serie, ResponseApi<SerieApi>>, BaseViewModelProtocol{
+class SeriesViewModel: BaseViewModel<Serie>, BaseViewModelProtocol{
     typealias T = Serie
     
-    func onActionPerformed(action: BaseAction<Serie>) {
+    let service: SeriesServiceProtocol
+    
+    init(data: BaseData<Serie>, service: SeriesServiceProtocol = SeriesService()) {
+        self.service = service
+        super.init(data: data)
+    }
+    
+    func onPerformAction(action: BaseAction<Serie>) {
         switch action {
         case BaseAction.load:
             onLoadData()
@@ -24,7 +25,7 @@ class SeriesViewModel: BaseViewModel<Serie, ResponseApi<SerieApi>>, BaseViewMode
     
     func onLoadData() {
         data.changeState(newState: BaseState.loaded)
-        (service as? SeriesService)?.execute(page: currentPage)
+        service.execute(serieId: nil, page: currentPage, limit: 20)
             .sink(receiveCompletion: { completion in
                 self.onRetrieveError(completion: completion)
                 
@@ -42,7 +43,7 @@ class SeriesViewModel: BaseViewModel<Serie, ResponseApi<SerieApi>>, BaseViewMode
         if let seriesApi = response.data?.results{
             
             let series = seriesApi.map{
-                Serie(id: $0.id ?? 0, title: $0.title ?? "", description: $0.description ?? "", thumbnail:  URL(string: secureURLThumbnail(thumbnail: $0.thumbnail) ?? "https://www.google.com")!)
+                Serie(id: $0.id ?? 0, title: $0.title ?? "No title.", description: $0.description ?? "No description.", thumbnail:  URL(string: secureURLThumbnail(thumbnail: $0.thumbnail) ?? "https://www.google.com")!)
             }
             
             data.data.append(contentsOf: series)

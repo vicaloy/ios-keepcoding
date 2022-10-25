@@ -1,9 +1,4 @@
-//
-//  ComicApi.swift
-//  Marvel
-//
-//  Created by Victoria Aloy on 24/10/22.
-//
+
 
 import Foundation
 

@@ -1,24 +1,16 @@
-//
-//  BaseViewModel.swift
-//  Marvel
-//
-//  Created by Victoria Aloy on 24/10/22.
-//
+
 
 import Combine
 
-class BaseViewModel<T, S: Decodable>: ObservableObject{
+class BaseViewModel<T>: ObservableObject{
     
     @Published
     var data: BaseData<T>
-    
-    var cancellableSet: Set<AnyCancellable> = []
     var currentPage: Int = 0
-    var service: BaseService<S>
+    var cancellableSet: Set<AnyCancellable> = []
     
-    init(data: BaseData<T>, service: BaseService<S>) {
+    init(data: BaseData<T>) {
         self.data = data
-        self.service = service
     }
     
     deinit {
@@ -28,7 +20,7 @@ class BaseViewModel<T, S: Decodable>: ObservableObject{
 
 protocol BaseViewModelProtocol {
     associatedtype T
-    func onActionPerformed(action: BaseAction<T>)
+    func onPerformAction(action: BaseAction<T>)
     func onLoadData()
 }
 

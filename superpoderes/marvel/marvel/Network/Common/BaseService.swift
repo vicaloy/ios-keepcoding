@@ -1,9 +1,4 @@
-//
-//  BaseService.swift
-//  marvel
-//
-//  Created by Victoria Aloy on 21/10/22.
-//
+
 
 import Foundation
 import Combine
@@ -19,7 +14,7 @@ class BaseService<T: Decodable> {
         return publish(request: request, decoder: decoder)
     }
     
-    private func decode(request: URLRequest) -> JSONDecoder {
+    func decode(request: URLRequest) -> JSONDecoder {
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
@@ -40,7 +35,7 @@ class BaseService<T: Decodable> {
         return decoder
     }
     
-    private func publish(request: URLRequest, decoder: JSONDecoder) -> AnyPublisher<T, APIError> {
+    func publish(request: URLRequest, decoder: JSONDecoder) -> AnyPublisher<T, APIError> {
         return URLSession.shared
             .dataTaskPublisher(for: request)
             .mapError{ error in APIError.serverError(code: error.errorCode, message: error.localizedDescription) }

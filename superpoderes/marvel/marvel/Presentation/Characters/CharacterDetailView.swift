@@ -1,7 +1,8 @@
 
+
 import SwiftUI
 
-struct HeaderSerieView: View {
+struct CharacterDetailView: View {
     
     let character: Character
     
@@ -10,13 +11,16 @@ struct HeaderSerieView: View {
     }
     
     private func onContent() -> some View {
-        return ZStack{
-            onCharacterImage()
-            Group{
-                onBackgroundCharacterName()
-                onCharacterName()
-            }.padding(.top, 160)
-        }
+   
+            ZStack{
+                onCharacterImage()
+                Group{
+                    onBackgroundCharacterName()
+                    onCharacterName()
+                }.padding(.top, 160)
+            }
+            
+
     }
     
     private func onCharacterImage()-> some View{
@@ -61,7 +65,7 @@ struct HeaderSerieView: View {
     
 }
 
-struct HeaderDetailView_Previews: PreviewProvider {
+struct CharacterDetailView_Previews: PreviewProvider {
     static var character = Character(
         id:1,
         name: "Agent Brand",

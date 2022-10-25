@@ -1,17 +1,19 @@
-//
-//  CharactersViewModel.swift
-//  Marvel
-//
-//  Created by Victoria Aloy on 24/10/22.
-//
+
 
 import Combine
 import Foundation
 
-class CharactersViewModel: BaseViewModel<Character, ResponseApi<CharacterApi>>, BaseViewModelProtocol{
+class CharactersViewModel: BaseViewModel<Character>, BaseViewModelProtocol{
     typealias T = Character
     
-    func onActionPerformed(action: BaseAction<Character>) {
+    let service: CharactersServiceProtocol
+    
+    init(data: BaseData<Character>, service: CharactersServiceProtocol = CharactersService()) {
+        self.service = service
+        super.init(data: data)
+    }
+    
+    func onPerformAction(action: BaseAction<Character>) {
         switch action {
         case BaseAction.load:
             onLoadData()
@@ -24,7 +26,7 @@ class CharactersViewModel: BaseViewModel<Character, ResponseApi<CharacterApi>>, 
     
     func onLoadData() {
         data.changeState(newState: BaseState.loaded)
-        (service as? CharactersService)?.execute(searchTerm: data.searchTerm.value, page: currentPage)
+        service.execute(characterId: nil, searchTerm: data.searchTerm.value, page: currentPage, limit: 20)
             .sink(receiveCompletion: { completion in
                 self.onRetrieveError(completion: completion)
                 
@@ -42,7 +44,7 @@ class CharactersViewModel: BaseViewModel<Character, ResponseApi<CharacterApi>>, 
         if let charactersApi = response.data?.results{
             
             let characters = charactersApi.map{
-                Character(id: $0.id ?? 0, name: $0.name ?? "", thumbnail: URL(string: secureURLThumbnail(thumbnail: $0.thumbnail) ?? "https://www.google.com")!)
+                Character(id: $0.id ?? 0, name: $0.name ?? "No name.", thumbnail: URL(string: secureURLThumbnail(thumbnail: $0.thumbnail) ?? "https://www.google.com")!, description: $0.description ?? "No description.")
             }
             
             data.data.append(contentsOf: characters)

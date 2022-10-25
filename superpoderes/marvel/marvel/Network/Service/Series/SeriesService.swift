@@ -1,14 +1,11 @@
-//
-//  SerieService.swift
-//  marvel
-//
-//  Created by Victoria Aloy on 23/10/22.
-//
+
 
 import Foundation
 import Combine
 
-class SeriesService: BaseService<ResponseApi<SerieApi>>{
+class SeriesService: SeriesServiceProtocol{
+    
+    let service = BaseService<ResponseApi<SerieApi>>()
     
     func execute(serieId: String? = nil, page: Int = 0,
                  limit: Int = 20) -> AnyPublisher<ResponseApi<SerieApi>, APIError> {
@@ -26,7 +23,7 @@ class SeriesService: BaseService<ResponseApi<SerieApi>>{
         
         if let url = URL(string: urlString){
             
-            return buildRequest(url: url, httpMethod: HttpMethod.get)
+            return service.buildRequest(url: url, httpMethod: HttpMethod.get)
         }
         
         return Fail(error:APIError.urlError).eraseToAnyPublisher()

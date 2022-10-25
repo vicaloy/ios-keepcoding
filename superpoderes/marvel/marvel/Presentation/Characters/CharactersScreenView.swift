@@ -1,9 +1,4 @@
-//
-//  CharactersScreenView.swift
-//  Marvel
-//
-//  Created by Victoria Aloy on 24/10/22.
-//
+
 
 import SwiftUI
 
@@ -38,7 +33,7 @@ struct CharactersScreenView: View {
         Color
             .clear
             .onAppear{
-                viewModel.onActionPerformed(action: BaseAction.load)
+                viewModel.onPerformAction(action: BaseAction.load)
             }
     }
     
@@ -54,7 +49,7 @@ struct CharactersScreenView: View {
     }
     
     private func onLink(character: Character) -> some View{
-        NavigationLink(destination: SerieScreenView(viewModel: SeriesViewModel(data: BaseData<Serie>(), service: SeriesService()), character: character)) {
+        NavigationLink(destination: CharacterDetailView(character: character)) {
             CharacterItemView(character: character)
         }
         .onAppear{
@@ -73,7 +68,7 @@ extension CharactersScreenView{
     
     private func loadNextPage(character: Character){
         if isNextPageNeeded(character: character) {
-            viewModel.onActionPerformed(action: BaseAction.nextPage)
+            viewModel.onPerformAction(action: BaseAction.nextPage)
         }
     }
     
@@ -97,10 +92,11 @@ struct CharactersScreenView_Previews: PreviewProvider {
     static var character = Character(
         id:1,
         name: "Agent Brand",
-        thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg")!
+        thumbnail: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/4/60/52695285d6e7e.jpg")!,
+        description: "Description"
     )
     
     static var previews: some View {
-        CharactersScreenView(viewModel: CharactersViewModel(data: BaseData<Character>(), service: CharactersService()))
+        CharactersScreenView(viewModel: CharactersViewModel(data: BaseData<Character>()))
     }
 }

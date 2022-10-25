@@ -1,9 +1,3 @@
-//
-//  ChacheAsyncImage.swift
-//  marvel
-//
-//  Created by Victoria Aloy on 23/10/22.
-//
 
 import SwiftUI
 
