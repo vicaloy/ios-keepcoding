@@ -1,11 +1,11 @@
 # 📱 iOS Projects Repository
 
-This repository contains 5 iOS projects. Each project focuses on different aspects of iOS development, featuring a variety of technologies, patterns, and tools, including Swift, UIKit, SwiftUI, Combine, MVVM pattern, and unit testing.
+This repository contains 4 iOS projects. Each project focuses on different aspects of iOS development, featuring a variety of technologies, patterns, and tools, including Swift, UIKit, SwiftUI, Combine, MVVM pattern, and unit testing.
 
 Each project folder is labeled with a corresponding task letter for easy identification.
 
 ## 🚀 Features
-- 5 iOS Projects:
+- 4 iOS Projects:
 A collection of projects demonstrating various iOS development topics and practices.
 Each folder represents a different task with unique features.
 - Swift and UIKit:
